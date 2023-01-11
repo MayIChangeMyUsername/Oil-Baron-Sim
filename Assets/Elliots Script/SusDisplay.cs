@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class SusDisplay : MonoBehaviour
 {
-    TextMeshProUGUI eventText;
+    TextMeshProUGUI susEventText;
 
     string susDisplay;
 
@@ -16,12 +16,12 @@ public class SusDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        eventText = FindObjectOfType<TextMeshProUGUI>();
+        susEventText = FindObjectOfType<TextMeshProUGUI>();
 }
 
     // Update is called once per frame
     void Update()
     {
-        eventText.text = susDisplay;
+        susEventText.text = susDisplay;
     }
 }

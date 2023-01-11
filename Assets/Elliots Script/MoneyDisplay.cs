@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class MoneyDisplay : MonoBehaviour
 {
-    TextMeshProUGUI eventText;
+    TextMeshProUGUI monEventText;
 
     string moneyDisplay;
 
@@ -15,12 +15,12 @@ public class MoneyDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        eventText = FindObjectOfType<TextMeshProUGUI>();
+        monEventText = FindObjectOfType<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        eventText.text = moneyDisplay;
+        monEventText.text = moneyDisplay;
     }
 }
