@@ -16,7 +16,7 @@ public class SusDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        susEventText = FindObjectOfType<TextMeshProUGUI>();
+        susEventText = GameObject.Find("SusText").GetComponent<TextMeshProUGUI>();
 }
 
     // Update is called once per frame

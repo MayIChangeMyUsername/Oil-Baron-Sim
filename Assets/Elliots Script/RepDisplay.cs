@@ -16,7 +16,7 @@ public class RepDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        repEventText = FindObjectOfType<TextMeshProUGUI>();
+        repEventText = GameObject.Find("RepText").GetComponent<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
