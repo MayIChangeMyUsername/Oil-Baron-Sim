@@ -4,7 +4,7 @@ using UnityEngine;
 using TMPro;
 public class RepDisplay : MonoBehaviour
 {
-    TextMeshProUGUI eventText;
+    TextMeshProUGUI repEventText;
 
     string repDisplay;
 
@@ -16,12 +16,12 @@ public class RepDisplay : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        eventText = FindObjectOfType<TextMeshProUGUI>();
+        repEventText = FindObjectOfType<TextMeshProUGUI>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        eventText.text = repDisplay;
+        repEventText.text = repDisplay;
     }
 }
