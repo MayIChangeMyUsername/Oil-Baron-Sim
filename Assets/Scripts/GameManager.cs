@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
@@ -10,12 +11,16 @@ public class GameManager : MonoBehaviour
 
    public int reputation;
 
-    
+    public static int week = 0;
+
+    public Text dateText;
 
 
     // Start is called before the first frame update
     void Start()
     {
+        dateText.text = "Week: " + week;
+
          money = 56;
 
     sustain = 43;
@@ -26,10 +31,11 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        dateText.text = "Week: " + week;
 
         //de här ser till att alla värden stannar inom 0-100, så att ser ut som procent
 
-        if(money > 100)
+        if (money > 100)
         {
             money = 100;
         }
