@@ -4,6 +4,8 @@ using UnityEngine;
 using TMPro;
 public class MoneyDisplay : MonoBehaviour
 {
+
+
     TextMeshProUGUI monEventText;
 
     string moneyDisplay;
@@ -18,6 +20,7 @@ public class MoneyDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        //det här tar money variabeln från game managern
         moneyDisplay = FindObjectOfType<GameManager>().money.ToString() + "%";
         monEventText.text = moneyDisplay;
     }

@@ -6,6 +6,10 @@ public class Eventtext : MonoBehaviour
 {
     TextMeshProUGUI eventText;
 
+    List <string> eventList= new List<string>();
+
+    
+
     string event1;
 
     
@@ -16,22 +20,29 @@ public class Eventtext : MonoBehaviour
 
     bool event1Active;
 
+    bool eventActive; //den här kan man använda för att se till att man inte kan skippa ett event genom att byta dag
+
+
     // Start is called before the first frame update
 
    
     void Start()
     {
-        eventText = FindObjectOfType<TextMeshProUGUI>();
+        eventText = GameObject.Find("Eventtext").GetComponent<TextMeshProUGUI>();
+
+        eventList.Add("Do you want to build a new refinery. You would gain a medium amount of money but lose sustainability");
+    
+    
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.W))
+        if (Input.GetKeyDown(KeyCode.Mouse0))//kanske fungerar
         {
-            eventText.text = event1;
+            eventText.text = eventList[0];
             event1Active = true;
-           
+            eventActive = true;
         }
         if (event1Active == true)
          {
