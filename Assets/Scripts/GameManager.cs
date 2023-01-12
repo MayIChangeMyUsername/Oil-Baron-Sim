@@ -4,21 +4,29 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-   public int money = 56;
+   public int money;
 
-   public int sustain = 43;
+   public int sustain;
 
-   public int reputation = 23;
+   public int reputation;
+
+    
+
 
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
+         money = 56;
+
+    sustain = 43;
+
+   reputation = 23;
+}
 
     // Update is called once per frame
     void Update()
     {
+
         //de här ser till att alla värden stannar inom 0-100, så att ser ut som procent
 
         if(money > 100)

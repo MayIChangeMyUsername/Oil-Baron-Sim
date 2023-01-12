@@ -8,10 +8,7 @@ public class MoneyDisplay : MonoBehaviour
 
     string moneyDisplay;
 
-    private void Awake()
-    {
-        moneyDisplay = FindObjectOfType<GameManager>().money.ToString() + "%";
-    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -21,6 +18,7 @@ public class MoneyDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        moneyDisplay = FindObjectOfType<GameManager>().money.ToString() + "%";
         monEventText.text = moneyDisplay;
     }
 }

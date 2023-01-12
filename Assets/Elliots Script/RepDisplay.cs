@@ -8,10 +8,7 @@ public class RepDisplay : MonoBehaviour
 
     string repDisplay;
 
-    private void Awake()
-    {
-        repDisplay = FindObjectOfType<GameManager>().reputation.ToString() + "%";
-    }
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +19,7 @@ public class RepDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        repDisplay = FindObjectOfType<GameManager>().reputation.ToString() + "%";
         repEventText.text = repDisplay;
     }
 }

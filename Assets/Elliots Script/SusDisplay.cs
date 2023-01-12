@@ -8,10 +8,7 @@ public class SusDisplay : MonoBehaviour
 
     string susDisplay;
 
-    private void Awake()
-    {
-        susDisplay = FindObjectOfType<GameManager>().sustain.ToString() + "%";
-    }
+  
 
     // Start is called before the first frame update
     void Start()
@@ -22,6 +19,7 @@ public class SusDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        susDisplay = FindObjectOfType<GameManager>().sustain.ToString() + "%";
         susEventText.text = susDisplay;
     }
 }
