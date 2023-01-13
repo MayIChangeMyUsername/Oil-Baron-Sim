@@ -14,6 +14,8 @@ public class GameManager : MonoBehaviour
     public static int week = 0;
     public static int click = 1;
 
+    public static bool clicki = true;
+
     public Text weekText;
     public Text clickText;
 
