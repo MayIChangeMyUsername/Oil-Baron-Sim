@@ -1,36 +1,34 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.EventSystems;
+using UnityEngine.UI;
 
-public class Yes : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class Yes : MonoBehaviour
 {
-    public bool buttonClick;
+    public Button yourButton;
+
+    
 
     public bool yes1;
 
-    public void OnPointerDown(PointerEventData eventdata)
-    {
-        yes1 = true;
-        buttonClick = true;
-    }
-
-
-
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        buttonClick = false;
-    }
+  
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        Button btn = yourButton.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
     }
 
     // Update is called once per frame
     void Update()
     {
         
+    }
+
+    void TaskOnClick()
+    {
+
+        yes1 = true ;
     }
 }

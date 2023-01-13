@@ -20,7 +20,7 @@ public class Eventtext : MonoBehaviour
 
     //bool event1Active;
 
-    public bool eventActive; //den här kan man använda för att se till att man inte kan skippa ett event genom att byta dag
+  public  bool eventActive; //den här kan man använda för att se till att man inte kan skippa ett event genom att byta dag
 
     int eventNumber;
 
@@ -82,6 +82,8 @@ public class Eventtext : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        eventActive = FindObjectOfType<SkipdayLockTest>().eventBlock;
+
         yes = FindObjectOfType<Yes>().yes1;
 
         sustainAmnt = FindObjectOfType<GameManager>().sustain;

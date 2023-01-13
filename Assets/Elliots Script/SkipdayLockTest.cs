@@ -1,35 +1,30 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
-using UnityEngine.EventSystems;
-public class SkipdayLockTest : MonoBehaviour, IPointerDownHandler, IPointerUpHandler
+public class SkipdayLockTest : MonoBehaviour
 {
-    
 
-    public bool buttonClick;
 
-    public void OnPointerDown(PointerEventData eventdata)
-    {
-        buttonClick = true;
-    }
+    public Button yourButton;
 
-    public void OnPointerUp(PointerEventData eventData)
-    {
-        buttonClick = false;
-    }
+   
+
+   
 
     //List<string> eventList2 = new List<string>();
 
-    bool eventBlock;
+   public bool eventBlock;
 
     public int eventNum;
 
     // Start is called before the first frame update
     void Start()
     {
-        //eventList2 = FindObjectOfType<Eventtext>().eventList;
-
+        
+        Button btn = yourButton.GetComponent<Button>();
+        btn.onClick.AddListener(TaskOnClick);
 
     }
 
@@ -37,17 +32,15 @@ public class SkipdayLockTest : MonoBehaviour, IPointerDownHandler, IPointerUpHan
     void Update()
     {
         eventBlock =FindObjectOfType<Eventtext>().eventActive;
-        STND();
+       
 
     }
 
-    void STND()
+    void TaskOnClick()
     {
-        if (buttonClick == true && eventBlock == false)
-        {
-            eventBlock = true;
-            eventNum++;
-            GameManager.week++;
-        }
+        
+        eventBlock = true;
+        eventNum ++;
+        GameManager.week++;
     }
 }
