@@ -12,14 +12,16 @@ public class GameManager : MonoBehaviour
    public int reputation;
 
     public static int week = 0;
+    public static int click = 1;
 
-    public Text dateText;
-
+    public Text weekText;
+    public Text clickText;
 
     // Start is called before the first frame update
     void Start()
     {
-        dateText.text = "Week: " + week;
+        weekText.text = "Week: " + week;
+        clickText.text = "Click: " + click;
 
         money = 50;
 
@@ -32,7 +34,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        dateText.text = "Week: " + week;
+        weekText.text = "Week: " + week;
+        clickText.text = "Click: " + click;
 
         //de här ser till att alla värden stannar inom 0-100, så att ser ut som procent
 

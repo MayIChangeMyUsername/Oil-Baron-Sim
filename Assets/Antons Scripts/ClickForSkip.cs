@@ -1,27 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 
-public class SkipToNextDay : MonoBehaviour
+public class ClickForSkip : MonoBehaviour
 {
-    
+    [SerializeField]
+    KeyCode mouseclick;
     // Start is called before the first frame update
     void Start()
     {
-
+        
     }
 
     // Update is called once per frame
     void Update()
     {
-        STND();
+        CFS();
     }
-    void STND()
+    void CFS()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetKeyDown(mouseclick))
         {
-            GameManager.week++;
+            GameManager.click--;
         }
     }
 }
