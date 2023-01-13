@@ -21,11 +21,12 @@ public class GameManager : MonoBehaviour
     {
         dateText.text = "Week: " + week;
 
-         money = 56;
+        money = 50;
 
-    sustain = 43;
+        reputation = 43;
 
-   reputation = 23;
+        sustain = 140;
+         
 }
 
     // Update is called once per frame
