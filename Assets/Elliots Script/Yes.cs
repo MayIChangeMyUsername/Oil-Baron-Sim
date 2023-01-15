@@ -11,7 +11,7 @@ public class Yes : MonoBehaviour
 
     public bool yes1;
 
-  
+    public bool yesBlock;
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +28,11 @@ public class Yes : MonoBehaviour
 
     void TaskOnClick()
     {
-
-        yes1 = true ;
+        if (yesBlock == false)
+        {
+            yes1 = true;
+            yesBlock = true;
+        }
+            
     }
 }

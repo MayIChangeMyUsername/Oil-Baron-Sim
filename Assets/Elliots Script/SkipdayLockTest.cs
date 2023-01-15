@@ -25,22 +25,27 @@ public class SkipdayLockTest : MonoBehaviour
         
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
-
+        eventBlock = true;
     }
 
     // Update is called once per frame
     void Update()
     {
-        eventBlock =FindObjectOfType<Eventtext>().eventActive;
+        
        
 
     }
 
     void TaskOnClick()
     {
-        
-        eventBlock = true;
-        eventNum ++;
-        GameManager.week++;
+        if(eventBlock == false) 
+        {
+            eventBlock = true;
+
+            GameManager.week++;
+
+            FindObjectOfType<Yes>().yesBlock = false;
+        }
+       
     }
 }
