@@ -80,9 +80,11 @@ public class GameManager : MonoBehaviour
     {
         weekText.text = "Week: " + week;
         clickText.text = "Click: " + click;
+        moneyttxt.text = "$: " + money;
+        sustaintxt.text = "Sus: " + sustain;
+        reputationtxt.text = "Reputation: " + reputation;
 
-
-        if(eventYes == true && week == 0) 
+        if (eventYes == true && week == 0) 
         {
 
             money = money + smallAmount;
