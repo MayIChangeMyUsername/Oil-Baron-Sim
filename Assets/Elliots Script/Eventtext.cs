@@ -6,9 +6,9 @@ public class Eventtext : MonoBehaviour
 {
    TextMeshProUGUI eventText;
 
-   List <string> eventList= new List<string>();
+   string[] eventArray= new string[100];
 
-    
+   
 
    //string event1;
 
@@ -43,33 +43,10 @@ public class Eventtext : MonoBehaviour
 
         eventText = GameObject.Find("Eventtext").GetComponent<TextMeshProUGUI>();
 
- 
+        eventArray[0] = "Would you like to build a new factory?";
 
-        eventList.Add("Would you like to build a new factory?");
 
-        eventList.Add("Protests!?");
 
-        eventList.Add("Placeholder!");
-
-        eventList.Add("Hello");
-
-        eventList.Add("Hello");
-
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
-        eventList.Add("Hello");
 
     }
 
@@ -79,7 +56,7 @@ public class Eventtext : MonoBehaviour
     void Update()
     {
 
-        eventText.text = eventList[GameManager.week];
+        eventText.text = eventArray[GameManager.week];
         /*
 
                 yes = FindObjectOfType<Yes>().yes1;
