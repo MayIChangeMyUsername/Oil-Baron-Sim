@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
 
     public Text weekText;
     public Text clickText;
+    public Text moneyttxt;
+    public Text sustaintxt;
+    public Text reputationtxt;
 
     
 
@@ -59,6 +62,9 @@ public class GameManager : MonoBehaviour
     {
         weekText.text = "Week: " + week;
         clickText.text = "Click: " + click;
+        moneyttxt.text = "$: " + money;
+        sustaintxt.text = "Sus: " + sustain;
+        reputationtxt.text = "Reputation: " + reputation;
 
         money = 50;
 
