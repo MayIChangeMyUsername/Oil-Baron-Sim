@@ -20,17 +20,13 @@ public class Eventtext : MonoBehaviour
 
     //bool event1Active;
 
-    public bool eventActive; //den här kan man använda för att se till att man inte kan skippa ett event genom att byta dag
+  //den här kan man använda för att se till att man inte kan skippa ett event genom att byta dag
 
-    int eventNumber;
+   
 
     bool yes;
 
-    int sustainAmnt;
 
-    int moneyAmnt;
-
-    int reputationAmnt;
 
     int smallAmnt = 10;
 
@@ -43,7 +39,7 @@ public class Eventtext : MonoBehaviour
     {
         
 
-        eventActive = true;
+        
 
         eventText = GameObject.Find("Eventtext").GetComponent<TextMeshProUGUI>();
 
@@ -82,24 +78,23 @@ public class Eventtext : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+
         yes = FindObjectOfType<Yes>().yes1;
 
-        sustainAmnt = FindObjectOfType<GameManager>().sustain;
 
-        moneyAmnt = FindObjectOfType<GameManager>().money;
+       
 
-        reputationAmnt = FindObjectOfType<GameManager>().reputation;
-
-        eventNumber = FindObjectOfType<SkipdayLockTest>().eventNum;
-
-        eventText.text = eventList[eventNumber];
+        eventText.text = eventList[GameManager.week];
          
            
         if(yes == true) 
         {
-            moneyAmnt = moneyAmnt - smallAmnt;
-            eventActive = false;
+            //FindObjectOfType<GameManager>().money = FindObjectOfType<GameManager>().money - smallAmnt;
+            FindObjectOfType<SkipdayLockTest>().eventBlock = false;
             yes = false;
+            FindObjectOfType<Yes>().yes1 = false;
+            
         }
 
         /* if (event1Active == true)
