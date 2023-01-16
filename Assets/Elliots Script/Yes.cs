@@ -28,10 +28,11 @@ public class Yes : MonoBehaviour
 
     void TaskOnClick()
     {
-        if (yesBlock == false)
+        if (FindObjectOfType<GameManager>().answered == false)
         {
-            yes1 = true;
-            yesBlock = true;
+            
+            FindObjectOfType<GameManager>().eventYes = true;
+
         }
             
     }

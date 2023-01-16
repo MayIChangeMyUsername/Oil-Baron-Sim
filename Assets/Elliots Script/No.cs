@@ -3,49 +3,36 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class SkipdayLockTest : MonoBehaviour
+public class No : MonoBehaviour
 {
-
-
     public Button yourButton;
 
-   
 
-   
 
-    //List<string> eventList2 = new List<string>();
+    
 
-   public bool eventBlock;
-
-   
+    
 
     // Start is called before the first frame update
     void Start()
     {
-        
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
-        eventBlock = true;
     }
 
     // Update is called once per frame
     void Update()
     {
         
-       
-
     }
-
     void TaskOnClick()
     {
-        if(eventBlock == false) 
+        if (FindObjectOfType<GameManager>().answered == false)
         {
-            FindObjectOfType<GameManager>().eventActive = true;
+            FindObjectOfType<GameManager>().eventNo = true;
 
-            GameManager.week++;
 
-            FindObjectOfType<Yes>().yesBlock = false;
         }
-       
+
     }
 }

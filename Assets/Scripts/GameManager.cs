@@ -11,6 +11,14 @@ public class GameManager : MonoBehaviour
 
    public int reputation;
 
+
+    // olika mängder som ändrar på tex money värdet i event
+    int smallAmount = 15; 
+
+    int mediumAmount = 30;
+
+    int largeAmount = 45;
+
     public static int week = 0;
     public static int click = 1;
 
@@ -18,6 +26,33 @@ public class GameManager : MonoBehaviour
 
     public Text weekText;
     public Text clickText;
+
+    public bool answered; // den här säger om man redan har svarat på ett event eller inte
+
+    public bool eventYes; // ja till event
+
+    public bool eventNo; // nej till event
+
+    public bool eventActive;
+
+     
+
+    public void SavePlayer () 
+    {
+        SaveSystem.Saveplayer(this);
+    }
+
+
+
+    public void LoadPlayer() 
+    {
+        SaveData data = SaveSystem.LoadPlayer();
+
+        reputation = data.reputation;
+    }
+
+    
+
 
     // Start is called before the first frame update
     void Start()
@@ -30,14 +65,43 @@ public class GameManager : MonoBehaviour
         reputation = 43;
 
         sustain = 140;
-         
-}
+
+        eventActive = true;
+    }
 
     // Update is called once per frame
     void Update()
     {
         weekText.text = "Week: " + week;
         clickText.text = "Click: " + click;
+
+
+        if(eventYes == true && week == 0) 
+        {
+
+            money = money + smallAmount;
+
+            sustain = sustain - mediumAmount;
+
+            eventActive = false;
+
+            answered = true;
+
+            eventYes = false;
+
+        }
+
+        if(eventNo == true && week == 0) 
+        {
+
+            eventActive = false;
+
+            answered = true;
+
+            eventNo = false;
+
+        }
+     
 
         //de här ser till att alla värden stannar inom 0-100, så att ser ut som procent
 

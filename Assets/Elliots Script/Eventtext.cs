@@ -22,7 +22,7 @@ public class Eventtext : MonoBehaviour
 
   //den här kan man använda för att se till att man inte kan skippa ett event genom att byta dag
 
-    int eventNumber;
+   
 
     bool yes;
 
@@ -83,14 +83,14 @@ public class Eventtext : MonoBehaviour
         yes = FindObjectOfType<Yes>().yes1;
 
 
-        eventNumber = FindObjectOfType<SkipdayLockTest>().eventNum;
+       
 
         eventText.text = eventList[GameManager.week];
          
            
         if(yes == true) 
         {
-            FindObjectOfType<GameManager>().money = FindObjectOfType<GameManager>().money - smallAmnt;
+            //FindObjectOfType<GameManager>().money = FindObjectOfType<GameManager>().money - smallAmnt;
             FindObjectOfType<SkipdayLockTest>().eventBlock = false;
             yes = false;
             FindObjectOfType<Yes>().yes1 = false;
