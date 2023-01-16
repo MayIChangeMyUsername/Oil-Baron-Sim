@@ -1787,19 +1787,7 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1088280823}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: 
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &1088280823
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2412,6 +2400,12 @@ MonoBehaviour:
   reputation: 0
   weekText: {fileID: 2038699921}
   clickText: {fileID: 0}
+  moneyttxt: {fileID: 0}
+  sustaintxt: {fileID: 0}
+  reputationtxt: {fileID: 0}
+  eventYes: 0
+  eventNo: 0
+  eventActive: 0
 --- !u!4 &1848037213
 Transform:
   m_ObjectHideFlags: 0
@@ -2661,7 +2655,7 @@ MonoBehaviour:
     m_HighlightedColor: {r: 0.04088047, g: 0.5, b: 0.09227733, a: 1}
     m_PressedColor: {r: 0, g: 0, b: 0, a: 1}
     m_SelectedColor: {r: 0.6666667, g: 0.69411767, b: 0.48235297, a: 0}
-    m_DisabledColor: {r: 1, g: 0, b: 0, a: 0.5019608}
+    m_DisabledColor: {r: 0.039215688, g: 0.5019608, b: 0.09411766, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
