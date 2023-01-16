@@ -26,6 +26,9 @@ public class GameManager : MonoBehaviour
 
     public Text weekText;
     public Text clickText;
+    public Text moneyttxt;
+    public Text sustaintxt;
+    public Text reputationtxt;
 
     public bool answered; // den här säger om man redan har svarat på ett event eller inte
 
@@ -39,7 +42,7 @@ public class GameManager : MonoBehaviour
 
     public void SavePlayer () 
     {
-        SaveSystem.Saveplayer(this);
+        SaveSystem.SavePlayer(this);
     }
 
 
@@ -59,6 +62,9 @@ public class GameManager : MonoBehaviour
     {
         weekText.text = "Week: " + week;
         clickText.text = "Click: " + click;
+        moneyttxt.text = "$: " + money;
+        sustaintxt.text = "Sus: " + sustain;
+        reputationtxt.text = "Reputation: " + reputation;
 
         money = 50;
 

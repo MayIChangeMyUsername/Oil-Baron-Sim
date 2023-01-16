@@ -1568,6 +1568,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebd80c01847c4fb48b6603f8d335b062, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  clickButton: {fileID: 0}
 --- !u!1 &1086160683
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,7 +2410,8 @@ MonoBehaviour:
   money: 0
   sustain: 0
   reputation: 0
-  dateText: {fileID: 2038699921}
+  weekText: {fileID: 2038699921}
+  clickText: {fileID: 0}
 --- !u!4 &1848037213
 Transform:
   m_ObjectHideFlags: 0
@@ -2605,6 +2607,7 @@ GameObject:
   - component: {fileID: 1994868951}
   - component: {fileID: 1994868950}
   - component: {fileID: 1994868949}
+  - component: {fileID: 1994868952}
   m_Layer: 5
   m_Name: Button - LoreSkip
   m_TagString: STND
@@ -2727,6 +2730,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1994868947}
   m_CullTransparentMesh: 1
+--- !u!114 &1994868952
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1994868947}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebd80c01847c4fb48b6603f8d335b062, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  clickButton: {fileID: 1994868949}
 --- !u!1 &2038699919
 GameObject:
   m_ObjectHideFlags: 0
