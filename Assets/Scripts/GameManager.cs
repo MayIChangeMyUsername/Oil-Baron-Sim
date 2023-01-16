@@ -27,19 +27,19 @@ public class GameManager : MonoBehaviour
     public Text weekText;
     public Text clickText;
 
-    public bool answered; // den här säger om man redan har svarat på ett event eller inte
+    
 
     public bool eventYes; // ja till event
 
     public bool eventNo; // nej till event
 
-    public bool eventActive;
+    public bool eventActive; // är ett event igång
 
      
 
     public void SavePlayer () 
     {
-        SaveSystem.Saveplayer(this);
+        SaveSystem.SavePlayer(this);
     }
 
 
@@ -62,9 +62,9 @@ public class GameManager : MonoBehaviour
 
         money = 50;
 
-        reputation = 43;
+        reputation = 50;
 
-        sustain = 140;
+        sustain = 50;
 
         eventActive = true;
     }
@@ -85,7 +85,7 @@ public class GameManager : MonoBehaviour
 
             eventActive = false;
 
-            answered = true;
+            
 
             eventYes = false;
 
@@ -94,14 +94,43 @@ public class GameManager : MonoBehaviour
         if(eventNo == true && week == 0) 
         {
 
+            sustain = sustain + largeAmount;
+
             eventActive = false;
 
-            answered = true;
+            
 
             eventNo = false;
 
         }
-     
+
+        if (eventYes == true && week > 0)
+        {
+
+            money = money + mediumAmount;
+
+            reputation = reputation- smallAmount;
+
+            eventActive = false;
+
+
+
+            eventYes = false;
+
+        }
+
+        if (eventNo == true && week > 0)
+        {
+
+            sustain = sustain + mediumAmount;
+
+            eventActive = false;
+
+
+
+            eventNo = false;
+
+        }
 
         //de här ser till att alla värden stannar inom 0-100, så att ser ut som procent
 

@@ -27,7 +27,7 @@ public class No : MonoBehaviour
     }
     void TaskOnClick()
     {
-        if (FindObjectOfType<GameManager>().answered == false)
+        if (FindObjectOfType<GameManager>().eventActive == true)
         {
             FindObjectOfType<GameManager>().eventNo = true;
 

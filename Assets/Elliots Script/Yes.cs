@@ -9,9 +9,7 @@ public class Yes : MonoBehaviour
 
     
 
-    public bool yes1;
-
-    public bool yesBlock;
+ 
 
     // Start is called before the first frame update
     void Start()
@@ -28,7 +26,7 @@ public class Yes : MonoBehaviour
 
     void TaskOnClick()
     {
-        if (FindObjectOfType<GameManager>().answered == false)
+        if (FindObjectOfType<GameManager>().eventActive == true)
         {
             
             FindObjectOfType<GameManager>().eventYes = true;
