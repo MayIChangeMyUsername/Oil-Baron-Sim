@@ -24,11 +24,11 @@ public class Eventtext : MonoBehaviour
 
    
 
-    bool yes;
+   // bool yes;
 
 
 
-    int smallAmnt = 10;
+    //int smallAmnt = 10;
 
     //bool no;
 
@@ -79,23 +79,25 @@ public class Eventtext : MonoBehaviour
     void Update()
     {
 
-
-        yes = FindObjectOfType<Yes>().yes1;
-
-
-       
-
         eventText.text = eventList[GameManager.week];
-         
-           
-        if(yes == true) 
-        {
-            //FindObjectOfType<GameManager>().money = FindObjectOfType<GameManager>().money - smallAmnt;
-            FindObjectOfType<SkipdayLockTest>().eventBlock = false;
-            yes = false;
-            FindObjectOfType<Yes>().yes1 = false;
-            
-        }
+        /*
+
+                yes = FindObjectOfType<Yes>().yes1;
+
+
+
+
+               
+
+
+                if(yes == true) 
+                {
+                    //FindObjectOfType<GameManager>().money = FindObjectOfType<GameManager>().money - smallAmnt;
+                    FindObjectOfType<SkipdayLockTest>().eventBlock = false;
+                    yes = false;
+                    FindObjectOfType<Yes>().yes1 = false;
+
+                }*/
 
         /* if (event1Active == true)
          {
@@ -111,6 +113,6 @@ public class Eventtext : MonoBehaviour
             }
         }
         */
-       
+
     }
 }
