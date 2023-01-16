@@ -7,10 +7,10 @@ public class ReputationIcon : MonoBehaviour
 
     public Slider slider;
 
-    public void SetReputation(int Reputation)
+    /*public void SetReputation(int Reputation)
     {
         slider.value = Reputation;
-    }
+    }*/
 
     void Start()
     {
@@ -20,6 +20,6 @@ public class ReputationIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-
+        slider.value = FindObjectOfType<GameManager>().reputation;
     }
 }

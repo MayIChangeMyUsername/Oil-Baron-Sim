@@ -7,10 +7,10 @@ public class SustainabilityIcon : MonoBehaviour
 
     public Slider slider;
 
-    public void SetSustainability (int Sustainability)
+    /*public void SetSustainability (int Sustainability)
     {
-        slider.value = Sustainability;
-    }
+       
+    }*/
 
     void Start()
     {
@@ -20,6 +20,7 @@ public class SustainabilityIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        slider.value = FindObjectOfType<GameManager>().sustain;
 
     }
 }

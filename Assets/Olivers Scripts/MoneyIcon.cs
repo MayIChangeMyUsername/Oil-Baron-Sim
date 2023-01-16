@@ -7,10 +7,10 @@ public class MoneyIcon : MonoBehaviour
 
     public Slider slider;
 
-    public void SetMoney(int money)
+   /* public void SetMoney(int money)
     {
-        slider.value = money;
-    }
+        
+    }*/
 
     void Start()
     {
@@ -20,6 +20,6 @@ public class MoneyIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        slider.value = FindObjectOfType<GameManager>().money;
     }
 }
