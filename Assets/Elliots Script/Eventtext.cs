@@ -6,7 +6,7 @@ public class Eventtext : MonoBehaviour
 {
    TextMeshProUGUI eventText;
 
-   string[] eventArray= new string[100];
+   string[] eventArray= new string[] { "Consumers want lower prices, do you want to reduce prices?", "A landowner offers to sell an area rich in oil for a medium sum of money. Extracting the oil will take a few weeks. Do you accept the deal?", "The stock market has crashed! Do you want to sell parts of your land?" };
 
    
 
@@ -43,9 +43,7 @@ public class Eventtext : MonoBehaviour
 
         eventText = GameObject.Find("Eventtext").GetComponent<TextMeshProUGUI>();
 
-        eventArray[0] = "Consumers want lower prices, do you want to reduce prices?";
 
-        eventArray[1] = "";
 
         eventArray[2] = "Stock market crashes!";
 
