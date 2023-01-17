@@ -21,16 +21,12 @@ public class EventController : MonoBehaviour
 
     private void ReproduceText()
     {
-        //if not readied all letters
         if (index < actualEvent.finalText.Length)
         {
-            //get one letter
             char letter = actualEvent.finalText[index];
 
-            //Actualize on screen
             logTextBox.text = Write(letter);
 
-            //set to go to the next
             index += 1;
             StartCoroutine(PauseBetweenChars(letter));
         }
