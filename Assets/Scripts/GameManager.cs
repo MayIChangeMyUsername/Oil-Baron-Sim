@@ -1,16 +1,26 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+
    public int money;
 
    public int sustain;
 
    public int reputation;
 
+    public int eventArrayNumber;
+
+    string[] yesEffectArray = new string[] { "money = money - smallAmount reputation = reputation + smallAmount" };
+
+    string[] noEffectArray = new string[] { "" };
+
+    int fiftyFifty;
 
     // olika mängder som ändrar på tex money värdet i event
     int smallAmount = 5; 
@@ -78,67 +88,229 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+
         weekText.text = "Week: " + week;
         //clickText.text = "Click: " + click;
         moneyttxt.text = "" + money;
         sustaintxt.text = "" + sustain;
         reputationtxt.text = "" + reputation;
 
-        if (eventYes == true && week == 0) 
+        if (eventYes == true) 
         {
-
-            money = money + smallAmount;
-
-            sustain = sustain - mediumAmount;
-
-            eventActive = false;
-
-            
-
-            eventYes = false;
-
-        }
-
-        if(eventNo == true && week == 0) 
-        {
-
-            sustain = sustain + largeAmount;
-
-            eventActive = false;
-
-            
-
-            eventNo = false;
-
-        }
-
-        if (eventYes == true && week > 0)
-        {
-
-            money = money + mediumAmount;
-
-            reputation = reputation- smallAmount;
-
             eventActive = false;
 
 
 
             eventYes = false;
 
+            if (eventArrayNumber == 0) // lower prices
+            {
+                money = money - smallAmount;
+                reputation = reputation + smallAmount;
+            }
+            if (eventArrayNumber == 1) // buy land
+            {
+                money = money + mediumAmount;
+                sustain = sustain - mediumAmount;
+            }
+            if (eventArrayNumber == 2) // stock crash
+            {
+                money = money - mediumAmount;
+                reputation = reputation - mediumAmount;
+            }
+            if (eventArrayNumber == 3)// bad rumours (bara ja)
+            {
+                reputation = reputation - smallAmount;
+            }
+            if (eventArrayNumber == 4) //oil leak
+            {
+                sustain = sustain - mediumAmount;
+                money = money - smallAmount;
+            }
+            if (eventArrayNumber == 5) //oil consumption (bara ja)
+            {
+                money = money + mediumAmount;
+                sustain = sustain - smallAmount;
+            }
+            if (eventArrayNumber == 6) // social media
+            {
+                money = money - smallAmount;
+                reputation = reputation + largeAmount;
+            }
+            if (eventArrayNumber == 7) // effective extraction
+            {
+                
+                money = money + smallAmount;
+            }
+            if (eventArrayNumber == 8) // oil demand
+            {
+                money = money + smallAmount;
+                reputation = reputation + smallAmount;
+                sustain = sustain - mediumAmount;
+            }
+            if (eventArrayNumber == 9) //swindler
+            {
+                fiftyFifty = Random.Range(0, 1);
+
+                if (fiftyFifty == 0) 
+                { 
+                    money = money - mediumAmount; 
+                }
+                else 
+                {
+                    money = money + mediumAmount;
+                }
+
+            }
+            if (eventArrayNumber == 10) //protests
+            {
+                reputation = reputation - mediumAmount;
+                money = money - smallAmount;
+            }
+            if (eventArrayNumber == 11)// oil rig repair
+            {
+                money = money - mediumAmount;
+                sustain = sustain + smallAmount;
+            }
+            if (eventArrayNumber == 12)// sunk ship
+            {
+                money = money - mediumAmount;
+               
+            }
+            if (eventArrayNumber == 13)// tour
+            {
+                reputation = reputation + mediumAmount; //no more decisions from shop
+            }
+           
+            if (eventArrayNumber == 14)//large spillage
+            {
+                fiftyFifty = Random.Range(0, 1);
+                if(fiftyFifty == 0) 
+                {
+                    money = money - smallAmount;
+                    reputation = reputation + largeAmount;
+                }
+                else 
+                {
+                    money = money - smallAmount;
+                    reputation = reputation - largeAmount;
+                }
+            }
+            if (eventArrayNumber == 15)//susidise
+            {
+                money = money + largeAmount;
+            }
+            if (eventArrayNumber == 16)//sustainable extraction
+            {
+                money = money - mediumAmount;
+                reputation = reputation + largeAmount;
+                sustain = sustain + smallAmount;
+            }
+            if (eventArrayNumber == 17)// hit piece
+            {
+                money = money - mediumAmount;
+                reputation = reputation - smallAmount;
+
+            }
+        
+
+
         }
 
-        if (eventNo == true && week > 0)
+        if(eventNo == true) 
         {
 
-            sustain = sustain + mediumAmount;
-
             eventActive = false;
-
-
-
+         
             eventNo = false;
 
+            if (eventArrayNumber == 0) //lower prices
+            {
+                money = money + smallAmount;
+                reputation = reputation - smallAmount;
+            }
+            if (eventArrayNumber == 1) // buy land
+            {
+                reputation = reputation + smallAmount;
+            }
+            if (eventArrayNumber == 2) // stock crash
+            {
+                money = money - largeAmount;
+            }
+            if (eventArrayNumber == 3) // bad rumours (bara ja)
+            {
+                
+            }
+            if (eventArrayNumber == 4)// oil leak
+            {
+                sustain = sustain - mediumAmount;
+                reputation = reputation -  mediumAmount;
+            }
+            if (eventArrayNumber == 5) // oil consumption (bara ja)
+            {
+
+            }
+            if (eventArrayNumber == 6) // social media
+            {
+                reputation = reputation + mediumAmount;
+            }
+            if (eventArrayNumber == 7)
+            {
+
+            }
+            if (eventArrayNumber == 8)
+            {
+
+            }
+            if (eventArrayNumber == 9)
+            {
+
+            }
+            if (eventArrayNumber == 10)
+            {
+
+            }
+            if (eventArrayNumber == 11)
+            {
+
+            }
+            if (eventArrayNumber == 12)
+            {
+
+            }
+            if (eventArrayNumber == 13)
+            {
+
+            }
+            if (eventArrayNumber == 0)
+            {
+
+            }
+            if (eventArrayNumber == 14)
+            {
+
+            }
+            if (eventArrayNumber == 15)
+            {
+
+            }
+            if (eventArrayNumber == 16)
+            {
+
+            }
+            if (eventArrayNumber == 17)
+            {
+
+            }
+            
+
         }
+
+     
+
+        
 
         //de här ser till att alla värden stannar inom 0-100, så att ser ut som procent
 
@@ -190,5 +362,4 @@ public class GameManager : MonoBehaviour
     {
         //SceneManager.LoadScene(SceneManager.GetActiveScene().name); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
     }
-
 }
