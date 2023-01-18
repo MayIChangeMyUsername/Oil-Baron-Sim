@@ -5,12 +5,21 @@ using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
+
+
    public int money;
 
    public int sustain;
 
    public int reputation;
 
+    public int eventArrayNumber;
+
+    string[] yesEffectArray = new string[] { "money = money - smallAmount reputation = reputation + smallAmount" };
+
+    string[] noEffectArray = new string[] { "" };
+
+    int fiftyFifty;
 
     // olika mängder som ändrar på tex money värdet i event
     int smallAmount = 5; 
@@ -78,67 +87,225 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
+
+
         weekText.text = "Week: " + week;
         //clickText.text = "Click: " + click;
         moneyttxt.text = "" + money;
         sustaintxt.text = "" + sustain;
         reputationtxt.text = "" + reputation;
 
-        if (eventYes == true && week == 0) 
+        if (eventYes == true) 
         {
-
-            money = money + smallAmount;
-
-            sustain = sustain - mediumAmount;
-
-            eventActive = false;
-
-            
-
-            eventYes = false;
-
-        }
-
-        if(eventNo == true && week == 0) 
-        {
-
-            sustain = sustain + largeAmount;
-
-            eventActive = false;
-
-            
-
-            eventNo = false;
-
-        }
-
-        if (eventYes == true && week > 0)
-        {
-
-            money = money + mediumAmount;
-
-            reputation = reputation- smallAmount;
-
             eventActive = false;
 
 
 
             eventYes = false;
 
+            if (eventArrayNumber == 0) 
+            {
+                money = money - smallAmount;
+                reputation = reputation + smallAmount;
+            }
+            if (eventArrayNumber == 1)
+            {
+                money = money + mediumAmount;
+                sustain = sustain - mediumAmount;
+            }
+            if (eventArrayNumber == 2)
+            {
+                money = money - largeAmount;
+            }
+            if (eventArrayNumber == 3)
+            {
+                reputation = reputation - smallAmount;
+            }
+            if (eventArrayNumber == 4)
+            {
+                sustain = sustain - mediumAmount;
+            }
+            if (eventArrayNumber == 5)
+            {
+                money = money + mediumAmount;
+                sustain = sustain - smallAmount;
+            }
+            if (eventArrayNumber == 6)
+            {
+                money = money - smallAmount;
+                reputation = reputation + mediumAmount;
+            }
+            if (eventArrayNumber == 7)
+            {
+                
+                money = money + smallAmount;
+            }
+            if (eventArrayNumber == 8)
+            {
+                money = money + smallAmount;
+                reputation = reputation + smallAmount;
+                sustain = sustain - mediumAmount;
+            }
+            if (eventArrayNumber == 9)
+            {
+                fiftyFifty = Random.Range(0, 1);
+
+                if (fiftyFifty == 0) 
+                { 
+                    money = money - mediumAmount; 
+                }
+                else 
+                {
+                    money = money + mediumAmount;
+                }
+
+            }
+            if (eventArrayNumber == 10)
+            {
+                reputation = reputation - mediumAmount;
+            }
+            if (eventArrayNumber == 11)
+            {
+                money = money - mediumAmount;
+                sustain = sustain + smallAmount;
+            }
+            if (eventArrayNumber == 12)
+            {
+                money = money - mediumAmount;
+               
+            }
+            if (eventArrayNumber == 13)
+            {
+                reputation = reputation + mediumAmount; //no more decisions from shop
+            }
+           
+            if (eventArrayNumber == 14)
+            {
+                fiftyFifty = Random.Range(0, 1);
+                if(fiftyFifty == 0) 
+                {
+                    money = money - smallAmount;
+                    reputation = reputation + largeAmount;
+                }
+                else 
+                {
+                    money = money - smallAmount;
+                    reputation = reputation - largeAmount;
+                }
+            }
+            if (eventArrayNumber == 15)
+            {
+                money = money + largeAmount;
+            }
+            if (eventArrayNumber == 16)
+            {
+                money = money - mediumAmount;
+                reputation = reputation + largeAmount;
+                sustain = sustain + smallAmount;
+            }
+            if (eventArrayNumber == 17)
+            {
+                money = money - mediumAmount;
+                reputation = reputation - smallAmount;
+
+            }
+        
+
+
         }
 
-        if (eventNo == true && week > 0)
+        if(eventNo == true) 
         {
 
-            sustain = sustain + mediumAmount;
-
             eventActive = false;
-
-
-
+         
             eventNo = false;
 
+            if (eventArrayNumber == 0)
+            {
+                money = money + smallAmount;
+                reputation = reputation - smallAmount;
+            }
+            if (eventArrayNumber == 1)
+            {
+                reputation = reputation + smallAmount;
+            }
+            if (eventArrayNumber == 2)
+            {
+                money = money - largeAmount;
+            }
+            if (eventArrayNumber == 3)
+            {
+                
+            }
+            if (eventArrayNumber == 4)
+            {
+
+            }
+            if (eventArrayNumber == 5)
+            {
+
+            }
+            if (eventArrayNumber == 6)
+            {
+
+            }
+            if (eventArrayNumber == 7)
+            {
+
+            }
+            if (eventArrayNumber == 8)
+            {
+
+            }
+            if (eventArrayNumber == 9)
+            {
+
+            }
+            if (eventArrayNumber == 10)
+            {
+
+            }
+            if (eventArrayNumber == 11)
+            {
+
+            }
+            if (eventArrayNumber == 12)
+            {
+
+            }
+            if (eventArrayNumber == 13)
+            {
+
+            }
+            if (eventArrayNumber == 0)
+            {
+
+            }
+            if (eventArrayNumber == 14)
+            {
+
+            }
+            if (eventArrayNumber == 15)
+            {
+
+            }
+            if (eventArrayNumber == 16)
+            {
+
+            }
+            if (eventArrayNumber == 17)
+            {
+
+            }
+            
+
         }
+
+     
+
+        
 
         //de här ser till att alla värden stannar inom 0-100, så att ser ut som procent
 
@@ -188,7 +355,7 @@ public class GameManager : MonoBehaviour
     }
     void EndScreen () //Behövs inte tills vi har lagt till end scenes.
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
     }
 
 }
