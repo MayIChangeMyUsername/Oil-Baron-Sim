@@ -256,29 +256,32 @@ public class GameManager : MonoBehaviour
             {
                 reputation = reputation + mediumAmount;
             }
-            if (eventArrayNumber == 7) // effective extraction
+            if (eventArrayNumber == 7) // effective extraction (bara ja)
             {
 
             }
             if (eventArrayNumber == 8) //demand
             {
-
+                money = money - mediumAmount;
+                sustain = sustain + mediumAmount;
             }
             if (eventArrayNumber == 9)//swindler
             {
-
+                //
             }
             if (eventArrayNumber == 10)// protests
             {
-
+                reputation = reputation - largeAmount;
             }
             if (eventArrayNumber == 11)//rig repair
             {
-
+                sustain = sustain - mediumAmount;
+                reputation = reputation - smallAmount;
             }
             if (eventArrayNumber == 12) // sunk
             {
-
+                reputation = reputation - mediumAmount;
+                sustain = sustain - largeAmount;
             }
             if (eventArrayNumber == 13)//tour
             {

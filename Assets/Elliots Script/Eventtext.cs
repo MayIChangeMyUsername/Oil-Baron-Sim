@@ -23,7 +23,7 @@ public class Eventtext : MonoBehaviour
    "A competing oil corporation has caused an extraordinarily large oil spillage. This has caused outrage against the oil industry. Do you wish to make a public statement?",
    "The government has subsidised your company.",
    "An oil extraction method which is much less harmful for nature has been invented. However it is also more expensive. Do you want to adopt the new method?",
-   "A news site has just published a hit piece, detailing some of our shady business practices. Do you want to blame a few of your own employees and fire them?"
+   "A news site has just published a hit piece, detailing some of our shady business practices. Do you want to blame a few of your own employees and fire them?",
    };
 
     
