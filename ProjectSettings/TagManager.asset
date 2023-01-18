@@ -8,6 +8,7 @@ TagManager:
   - Yes
   - No
   - STND
+  - EventIMG
   layers:
   - Default
   - TransparentFX
