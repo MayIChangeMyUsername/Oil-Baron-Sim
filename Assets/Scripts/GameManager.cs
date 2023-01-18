@@ -14,13 +14,11 @@ public class GameManager : MonoBehaviour
 
    public int reputation;
 
-    public int eventArrayNumber;
+    public int eventArrayNumber; //nummer på eventet som visas
 
-    string[] yesEffectArray = new string[] { "money = money - smallAmount reputation = reputation + smallAmount" };
+    
 
-    string[] noEffectArray = new string[] { "" };
-
-    int fiftyFifty;
+    int fiftyFifty; // används till vissa event
 
     // olika mängder som ändrar på tex money värdet i event
     int smallAmount = 10; 
@@ -32,7 +30,7 @@ public class GameManager : MonoBehaviour
     public static int week = 0;
     public static int click = 1;
 
-    public static bool clicki = true;
+    public static bool clicki = true; // gammal test variabel
 
     public Text weekText;
     //public Text clickText;
@@ -97,11 +95,9 @@ public class GameManager : MonoBehaviour
         sustaintxt.text = "" + sustain;
         reputationtxt.text = "" + reputation;
 
-        if (eventYes == true) 
+        if (eventYes == true) //det här ändrar på stats om man trycker ja
         {
             eventActive = false;
-
-
 
             eventYes = false;
 
@@ -219,7 +215,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if(eventNo == true) 
+        if(eventNo == true) //det här ändrar på stats om man trycker nej
         {
 
             eventActive = false;
