@@ -210,7 +210,7 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 17)// hit piece
             {
-                money = money - mediumAmount;
+                money = money - smallAmount;
                 reputation = reputation - smallAmount;
 
             }
@@ -285,24 +285,24 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 13)//tour
             {
-
+                reputation = reputation - smallAmount;
             }
            
             if (eventArrayNumber == 14)// big spillage
             {
-
+                reputation = reputation - largeAmount;
             }
             if (eventArrayNumber == 15)//subsidies
             {
-
+                reputation = reputation - mediumAmount;
             }
             if (eventArrayNumber == 16)//sustainable extraction
             {
-
+                reputation = reputation - smallAmount;
             }
             if (eventArrayNumber == 17)//hit piece
             {
-
+                reputation = reputation - mediumAmount;
             }
             
 
