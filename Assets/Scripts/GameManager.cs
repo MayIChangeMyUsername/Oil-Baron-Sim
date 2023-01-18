@@ -25,7 +25,7 @@ public class GameManager : MonoBehaviour
     public static bool clicki = true;
 
     public Text weekText;
-    public Text clickText;
+    //public Text clickText;
     public Text moneyttxt;
     public Text sustaintxt;
     public Text reputationtxt;
@@ -61,10 +61,10 @@ public class GameManager : MonoBehaviour
     void Start()
     {
         weekText.text = "Week: " + week;
-        clickText.text = "Click: " + click;
-        moneyttxt.text = "$: " + money;
-        sustaintxt.text = "Sus: " + sustain;
-        reputationtxt.text = "Reputation: " + reputation;
+        //clickText.text = "Click: " + click;
+        moneyttxt.text = "" + money;
+        sustaintxt.text = "" + sustain;
+        reputationtxt.text = "" + reputation;
 
         money = 50;
 
@@ -79,10 +79,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         weekText.text = "Week: " + week;
-        clickText.text = "Click: " + click;
-        moneyttxt.text = "$: " + money;
-        sustaintxt.text = "Sus: " + sustain;
-        reputationtxt.text = "Reputation: " + reputation;
+        //clickText.text = "Click: " + click;
+        moneyttxt.text = "" + money;
+        sustaintxt.text = "" + sustain;
+        reputationtxt.text = "" + reputation;
 
         if (eventYes == true && week == 0) 
         {
