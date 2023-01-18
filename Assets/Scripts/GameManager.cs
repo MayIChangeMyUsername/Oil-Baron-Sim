@@ -289,15 +289,15 @@ public class GameManager : MonoBehaviour
             {
 
             }
-            if (eventArrayNumber == 15)
+            if (eventArrayNumber == 15)//subsidies
             {
 
             }
-            if (eventArrayNumber == 16)
+            if (eventArrayNumber == 16)//sustainable extraction
             {
 
             }
-            if (eventArrayNumber == 17)
+            if (eventArrayNumber == 17)//hit piece
             {
 
             }
