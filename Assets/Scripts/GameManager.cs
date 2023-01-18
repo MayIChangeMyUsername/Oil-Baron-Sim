@@ -172,4 +172,23 @@ public class GameManager : MonoBehaviour
             reputation = 0;
         }
     }
+
+    bool gameHasEnded = false;
+
+    public float endScreenDelay = 1f;
+    public void EndGame ()
+    {
+        if (gameHasEnded == false)
+        {
+            gameHasEnded = true;
+            Debug.Log("Game Over!");
+            Invoke("EndScreen", endScreenDelay); //byter scene till EndScreen efter 1f (1f är tid)
+        }
+            
+    }
+    void EndScreen () //Behövs inte tills vi har lagt till end scenes.
+    {
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+    }
+
 }
