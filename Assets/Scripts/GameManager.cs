@@ -23,11 +23,11 @@ public class GameManager : MonoBehaviour
     int fiftyFifty;
 
     // olika mängder som ändrar på tex money värdet i event
-    int smallAmount = 5; 
+    int smallAmount = 10; 
 
     int mediumAmount = 10;
 
-    int largeAmount = 20;
+    int largeAmount = 30;
 
     public static int week = 0;
     public static int click = 1;
