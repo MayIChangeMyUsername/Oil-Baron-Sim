@@ -256,39 +256,36 @@ public class GameManager : MonoBehaviour
             {
                 reputation = reputation + mediumAmount;
             }
-            if (eventArrayNumber == 7)
+            if (eventArrayNumber == 7) // effective extraction
             {
 
             }
-            if (eventArrayNumber == 8)
+            if (eventArrayNumber == 8) //demand
             {
 
             }
-            if (eventArrayNumber == 9)
+            if (eventArrayNumber == 9)//swindler
             {
 
             }
-            if (eventArrayNumber == 10)
+            if (eventArrayNumber == 10)// protests
             {
 
             }
-            if (eventArrayNumber == 11)
+            if (eventArrayNumber == 11)//rig repair
             {
 
             }
-            if (eventArrayNumber == 12)
+            if (eventArrayNumber == 12) // sunk
             {
 
             }
-            if (eventArrayNumber == 13)
+            if (eventArrayNumber == 13)//tour
             {
 
             }
-            if (eventArrayNumber == 0)
-            {
-
-            }
-            if (eventArrayNumber == 14)
+           
+            if (eventArrayNumber == 14)// big spillage
             {
 
             }
