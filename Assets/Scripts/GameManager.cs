@@ -104,50 +104,52 @@ public class GameManager : MonoBehaviour
 
             eventYes = false;
 
-            if (eventArrayNumber == 0) 
+            if (eventArrayNumber == 0) // lower prices
             {
                 money = money - smallAmount;
                 reputation = reputation + smallAmount;
             }
-            if (eventArrayNumber == 1)
+            if (eventArrayNumber == 1) // buy land
             {
                 money = money + mediumAmount;
                 sustain = sustain - mediumAmount;
             }
-            if (eventArrayNumber == 2)
+            if (eventArrayNumber == 2) // stock crash
             {
-                money = money - largeAmount;
+                money = money - mediumAmount;
+                reputation = reputation - mediumAmount;
             }
-            if (eventArrayNumber == 3)
+            if (eventArrayNumber == 3)// bad rumours (bara ja)
             {
                 reputation = reputation - smallAmount;
             }
-            if (eventArrayNumber == 4)
+            if (eventArrayNumber == 4) //oil leak
             {
                 sustain = sustain - mediumAmount;
+                money = money - smallAmount;
             }
-            if (eventArrayNumber == 5)
+            if (eventArrayNumber == 5) //oil consumption (bara ja)
             {
                 money = money + mediumAmount;
                 sustain = sustain - smallAmount;
             }
-            if (eventArrayNumber == 6)
+            if (eventArrayNumber == 6) // social media
             {
                 money = money - smallAmount;
-                reputation = reputation + mediumAmount;
+                reputation = reputation + largeAmount;
             }
-            if (eventArrayNumber == 7)
+            if (eventArrayNumber == 7) // effective extraction
             {
                 
                 money = money + smallAmount;
             }
-            if (eventArrayNumber == 8)
+            if (eventArrayNumber == 8) // oil demand
             {
                 money = money + smallAmount;
                 reputation = reputation + smallAmount;
                 sustain = sustain - mediumAmount;
             }
-            if (eventArrayNumber == 9)
+            if (eventArrayNumber == 9) //swindler
             {
                 fiftyFifty = Random.Range(0, 1);
 
@@ -161,26 +163,27 @@ public class GameManager : MonoBehaviour
                 }
 
             }
-            if (eventArrayNumber == 10)
+            if (eventArrayNumber == 10) //protests
             {
                 reputation = reputation - mediumAmount;
+                money = money - smallAmount;
             }
-            if (eventArrayNumber == 11)
+            if (eventArrayNumber == 11)// oil rig repair
             {
                 money = money - mediumAmount;
                 sustain = sustain + smallAmount;
             }
-            if (eventArrayNumber == 12)
+            if (eventArrayNumber == 12)// sunk ship
             {
                 money = money - mediumAmount;
                
             }
-            if (eventArrayNumber == 13)
+            if (eventArrayNumber == 13)// tour
             {
                 reputation = reputation + mediumAmount; //no more decisions from shop
             }
            
-            if (eventArrayNumber == 14)
+            if (eventArrayNumber == 14)//large spillage
             {
                 fiftyFifty = Random.Range(0, 1);
                 if(fiftyFifty == 0) 
@@ -194,17 +197,17 @@ public class GameManager : MonoBehaviour
                     reputation = reputation - largeAmount;
                 }
             }
-            if (eventArrayNumber == 15)
+            if (eventArrayNumber == 15)//susidise
             {
                 money = money + largeAmount;
             }
-            if (eventArrayNumber == 16)
+            if (eventArrayNumber == 16)//sustainable extraction
             {
                 money = money - mediumAmount;
                 reputation = reputation + largeAmount;
                 sustain = sustain + smallAmount;
             }
-            if (eventArrayNumber == 17)
+            if (eventArrayNumber == 17)// hit piece
             {
                 money = money - mediumAmount;
                 reputation = reputation - smallAmount;
@@ -222,34 +225,35 @@ public class GameManager : MonoBehaviour
          
             eventNo = false;
 
-            if (eventArrayNumber == 0)
+            if (eventArrayNumber == 0) //lower prices
             {
                 money = money + smallAmount;
                 reputation = reputation - smallAmount;
             }
-            if (eventArrayNumber == 1)
+            if (eventArrayNumber == 1) // buy land
             {
                 reputation = reputation + smallAmount;
             }
-            if (eventArrayNumber == 2)
+            if (eventArrayNumber == 2) // stock crash
             {
                 money = money - largeAmount;
             }
-            if (eventArrayNumber == 3)
+            if (eventArrayNumber == 3) // bad rumours (bara ja)
             {
                 
             }
-            if (eventArrayNumber == 4)
+            if (eventArrayNumber == 4)// oil leak
+            {
+                sustain = sustain - mediumAmount;
+                reputation = reputation -  mediumAmount;
+            }
+            if (eventArrayNumber == 5) // oil consumption (bara ja)
             {
 
             }
-            if (eventArrayNumber == 5)
+            if (eventArrayNumber == 6) // social media
             {
-
-            }
-            if (eventArrayNumber == 6)
-            {
-
+                reputation = reputation + mediumAmount;
             }
             if (eventArrayNumber == 7)
             {
