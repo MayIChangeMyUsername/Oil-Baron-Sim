@@ -9,7 +9,7 @@ public class SkipdayLockTest : MonoBehaviour
 
     public Button yourButton;
 
-    public int eventArrayNumber;
+    
 
    
 
@@ -44,7 +44,7 @@ public class SkipdayLockTest : MonoBehaviour
 
             GameManager.week++;
 
-            eventArrayNumber = Random.Range(0, 18);
+            FindObjectOfType<GameManager>().eventArrayNumber = Random.Range(0, 17);
 
             
         }
