@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
     }
     void EndScreen () //Behövs inte tills vi har lagt till end scenes.
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().name); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+        //SceneManager.LoadScene(SceneManager.GetActiveScene().name); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
     }
 
 }
