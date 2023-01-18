@@ -15,7 +15,7 @@ public class Eventtext : MonoBehaviour
    "Through advertising on social media people's opinion of your company has increased. Do you want to spend more money on social media advertising?",
    "A more effective way of producing oil has been developed!",
    "Demand for oil has rapidly begun increasing. Do you want to accelerate the production rate to satifsy the demand?",
-   "You have recieved a business proposal from a potential swindler. Do you accept the deal?",
+   "You have recieved a phone call from a potential swindler. Do you want to answer?",
    "One of your oil rigs is in need of massive repairs. You could either hire experienced workers who can repair without harming marine life or let your own workers repair despite the damage it would cause",
    "One of your oil tankers has sunk leaving large amounts of oil in the ocean. Do you want to clean it up?",
    "A reporter has asked for a tour on one of your oil rigs. Do you accept the request?",
@@ -25,23 +25,24 @@ public class Eventtext : MonoBehaviour
    "A news site has just published a hit piece, detailing some of our shady business practices. How will you respond?"
    };
 
-   
+    string[] yesEffectArray = new string[] {"" };
+
 
    //string event1;
 
-    
+
 
     //string event1A = "Yes";
 
-       // string event1B = "No";
+    // string event1B = "No";
 
     //bool event1Active;
 
-  //den här kan man använda för att se till att man inte kan skippa ett event genom att byta dag
+    //den här kan man använda för att se till att man inte kan skippa ett event genom att byta dag
 
-   
 
-   // bool yes;
+
+    // bool yes;
 
 
 
@@ -81,7 +82,7 @@ public class Eventtext : MonoBehaviour
     void Update()
     {
 
-        eventText.text = eventArray[GameManager.week];
+        eventText.text = eventArray[FindObjectOfType<SkipdayLockTest>().eventArrayNumber];
         /*
 
                 yes = FindObjectOfType<Yes>().yes1;
