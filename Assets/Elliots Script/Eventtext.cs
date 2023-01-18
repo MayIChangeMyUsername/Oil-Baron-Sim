@@ -25,7 +25,7 @@ public class Eventtext : MonoBehaviour
    "A news site has just published a hit piece, detailing some of our shady business practices. How will you respond?"
    };
 
-    //string[] yesEffectArray = new string[] { }
+    string[] yesEffectArray = new string[] {"" };
 
 
    //string event1;
