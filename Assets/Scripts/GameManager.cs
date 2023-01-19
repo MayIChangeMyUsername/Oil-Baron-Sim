@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 
     int largeAmount = 45;
 
-    public static int week = 0;
+    public  int week = 0;
     public static int click = 1;
 
     public static bool clicki = true; // gammal test variabel

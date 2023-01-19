@@ -50,8 +50,8 @@ public class SkipdayLockTest : MonoBehaviour
         {
             FindObjectOfType<GameManager>().eventActive = true;
 
-
-            GameManager.week++;
+            FindObjectOfType<GameManager>().week++;
+            
             lastEventNumber = FindObjectOfType<GameManager>().eventArrayNumber;
 
             ToggleImage(lastEventNumber, false); // gömmer gamla bilden
