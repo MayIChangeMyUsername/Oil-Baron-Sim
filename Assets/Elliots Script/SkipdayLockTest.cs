@@ -20,7 +20,7 @@ public class SkipdayLockTest : MonoBehaviour
     //List<string> eventList2 = new List<string>();
 
 
-
+  
 
 
     // Start is called before the first frame update
@@ -31,6 +31,8 @@ public class SkipdayLockTest : MonoBehaviour
       
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        FindObjectOfType<GameManager>().eventActive = false;
+        TaskOnClick();
         
     }
 
@@ -51,7 +53,7 @@ public class SkipdayLockTest : MonoBehaviour
             GameManager.week++;
             lastEventNumber = FindObjectOfType<GameManager>().eventArrayNumber;
 
-            ToggleImage(lastEventNumber, false);
+            ToggleImage(lastEventNumber, false); // gömmer gamla bilden
 
             nextEventNumber = Random.Range(0, 17);
 
@@ -63,16 +65,18 @@ public class SkipdayLockTest : MonoBehaviour
 
             FindObjectOfType<GameManager>().eventArrayNumber = nextEventNumber;
 
-            ToggleImage(nextEventNumber, true);
+            
+
+            ToggleImage(nextEventNumber, true); //visar bilden
 
         }
 
         void ToggleImage(int eventNumber, bool show) // visar rätt bild
         {
-            eventImage = GameObject.Find("Event " + eventNumber).GetComponent<SpriteRenderer>();
+            eventImage = GameObject.Find("Event " + eventNumber).GetComponent<SpriteRenderer>(); //tar bilden med rätt namn (byt ej bild objektens namn i unity)
 
             tempAlpha = eventImage.color;
-
+            
             if (show) 
             {
                 tempAlpha.a = 1;
