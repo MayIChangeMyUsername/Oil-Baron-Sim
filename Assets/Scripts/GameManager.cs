@@ -21,11 +21,11 @@ public class GameManager : MonoBehaviour
     int fiftyFifty; // används till vissa event
 
     // olika mängder som ändrar på tex money värdet i event
-    int smallAmount = 20; 
+    int smallAmount = 15; 
 
     int mediumAmount = 30;
 
-    int largeAmount = 40;
+    int largeAmount = 45;
 
     public static int week = 0;
     public static int click = 1;
@@ -80,7 +80,7 @@ public class GameManager : MonoBehaviour
 
         sustain = 50;
 
-        eventActive = true;
+        
     }
 
     // Update is called once per frame

@@ -31,6 +31,8 @@ public class SkipdayLockTest : MonoBehaviour
       
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
+        FindObjectOfType<GameManager>().eventActive = false;
+        TaskOnClick();
         
     }
 
