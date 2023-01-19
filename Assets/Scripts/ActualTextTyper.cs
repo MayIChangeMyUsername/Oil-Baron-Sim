@@ -41,7 +41,6 @@ public class ActualTextTyper : MonoBehaviour
         dialogueLines.Enqueue("No<sprite index=0><sprite index=1><sprite index=2><sprite index=3>more sprites... This is painfull.");
         dialogueLines.Enqueue("I can resize <size=40>my </size> ... <size=20>what did u think I was gonna write?</size>");
         dialogueLines.Enqueue("You can have <color=#00ff00ff>a life</color> or <color=#ff0000ff>just put up some ceiling decorations.</color>.");
-        dialogueLines.Enqueue("This text can dance, look... <anim=lightrot>Light Roll!!!</anim>, <anim=lightpos>Lez goooo</anim>, <anim=fullshake>I'm gonna puke...</anim>\nwhoopwhoop: <animation=slowsine>Slow Shine</animation>, <animation=bounce>Bounce Bounce>:)</animation>, <animation=crazyflip>Crazy Flip, this one is sick.</animation>");
         ShowScript();
     }
 
