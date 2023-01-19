@@ -51,7 +51,7 @@ public class SkipdayLockTest : MonoBehaviour
             GameManager.week++;
             lastEventNumber = FindObjectOfType<GameManager>().eventArrayNumber;
 
-            ToggleImage(lastEventNumber, false);
+            ToggleImage(lastEventNumber, false); // gömmer gamla bilden
 
             nextEventNumber = Random.Range(0, 17);
 
@@ -63,13 +63,15 @@ public class SkipdayLockTest : MonoBehaviour
 
             FindObjectOfType<GameManager>().eventArrayNumber = nextEventNumber;
 
-            ToggleImage(nextEventNumber, true);
+            
+
+            ToggleImage(nextEventNumber, true); //visar bilden
 
         }
 
         void ToggleImage(int eventNumber, bool show) // visar rätt bild
         {
-            eventImage = GameObject.Find("Event " + eventNumber).GetComponent<SpriteRenderer>();
+            eventImage = GameObject.Find("Event " + eventNumber).GetComponent<SpriteRenderer>(); //tar bilden med rätt namn (byt ej bild objektens namn i unity)
 
             tempAlpha = eventImage.color;
 
