@@ -20,7 +20,7 @@ public class SkipdayLockTest : MonoBehaviour
     //List<string> eventList2 = new List<string>();
 
 
-
+  
 
 
     // Start is called before the first frame update
@@ -74,7 +74,7 @@ public class SkipdayLockTest : MonoBehaviour
             eventImage = GameObject.Find("Event " + eventNumber).GetComponent<SpriteRenderer>(); //tar bilden med rätt namn (byt ej bild objektens namn i unity)
 
             tempAlpha = eventImage.color;
-
+            
             if (show) 
             {
                 tempAlpha.a = 1;
