@@ -5,264 +5,138 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    string[] imageArray = new string[] {
+        "", "1down", "2down", "3down", "1up", "2up", "3up", "Unknown"
+    };
+
+    int[,] eventEffectsArray = new int[,] 
+    {
+     {1, 4, 0 }, //event 0 effekt osv {m , r , s)
+     {5, 0, 2}, //1
+     {2, 2, 0}, //2
+     {0, 1, 0}, //3
+     {1, 0, 2}, //4
+     {5, 0, 1},//5
+     {1, 6, 0},//6
+     {1, 0, 0},//7
+     {4, 4, 2},//8
+     {7, 0, 0}, //9
+     {1, 2, 0}, //10
+     {2, 0, 4},//11
+     {2, 0, 0},//12
+     {0, 5, 0},//13
+     {1, 7, 0},//14
+     {6, 0, 0},//15
+     {2, 6, 4},//16
+     {1, 1, 0}//17
+     
+
+    };
+
+  
+
     public bool yesButtonHover;
 
     Color tempColor;
 
-    Image arrowImage1;
+    Image arrowImage;
 
-    Image arrowImage2;
 
-    Image arrowImage3;
-
-    Image arrowImage4;
-
-    Image arrowImage5;
-
-    Image arrowImage6;
 
     public void OnPointerEnter(PointerEventData eventdata)
     {
-
-        yesButtonHover = true;
+        if (FindObjectOfType<GameManager>().eventActive == true)
+        {
+            GetChange();
+            yesButtonHover = true;
+        }
+       
         
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
+        HideChange();
         yesButtonHover = false;
         
     }
 
-        void DisplayS1up() 
+        void GetChange() 
     {
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
+        int  mon = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 0];
 
-        tempColor = arrowImage1.color;
+        int rep = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 1];
 
-        tempColor.a = 1;
+        int sus = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 2];
 
-        arrowImage1.color = tempColor;
 
+        ShowChange("M" + imageArray[mon]);
+        ShowChange("R" + imageArray[rep]);
+        ShowChange("S" + imageArray[sus]);
 
     }
 
-    void DisplayS2up()
+    void ShowChange(string imageRef) 
     {
+        //Debug.Log("bild" + imageRef);
+        if(imageRef.Length > 1) 
+        {
+            arrowImage = GameObject.Find(imageRef).GetComponent<Image>();
 
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
+            tempColor = arrowImage.color;
 
-        tempColor = arrowImage1.color;
+            tempColor.a = 1;
 
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
+            arrowImage.color = tempColor;
+        }
+   
     }
-
-    void DisplayS3up()
+   
+   public void HideChange() 
     {
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
+        for (int i = 1; i < imageArray.Length; i++ )
+        {
+            arrowImage = GameObject.Find("M" + imageArray[i]).GetComponent<Image>();
 
-        tempColor = arrowImage1.color;
+            tempColor = arrowImage.color;
 
-        tempColor.a = 1;
+            tempColor.a = 0;
 
-        arrowImage1.color = tempColor;
+            arrowImage.color = tempColor;
 
-    }
+            arrowImage = GameObject.Find("R" + imageArray[i]).GetComponent<Image>();
 
-    void DisplayR1up()
-    {
+            tempColor = arrowImage.color;
 
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
+            tempColor.a = 0;
 
-        tempColor = arrowImage1.color;
+            arrowImage.color = tempColor;
 
-        tempColor.a = 1;
+            arrowImage = GameObject.Find("S" + imageArray[i]).GetComponent<Image>();
 
-        arrowImage1.color = tempColor;
-    }
+            tempColor = arrowImage.color;
 
-    void DisplayR2up()
-    {
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
+            tempColor.a = 0;
 
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-
-
-    }
-
-    void DisplayR3up()
-    {
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-
-    }
-
-    void DisplayM1up()
-    {
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-
-    }
-
-    void DisplayM2up()
-    {
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-
-    }
-
-    void DisplayM3up()
-    {
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-
-    }
-
-    void DisplayS1down()
-    {
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-
-    }
-
-    void DisplayS2down()
-    {
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-
-    }
-
-    void DisplayS3down()
-    {
-
-        arrowImage1 = GameObject.Find("S1up").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-    }
-
-    void DisplayR1down()
-    {
-
-        arrowImage1 = GameObject.Find("R1down").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-    }
-
-    void DisplayR2down()
-    {
-
-        arrowImage1 = GameObject.Find("R2down").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-    }
-
-    void DisplayR3down()
-    {
-
-        arrowImage1 = GameObject.Find("R3down").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-    }
-
-    void DisplayM1down()
-    {
-        arrowImage1 = GameObject.Find("M1down").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-
-    }
-
-    void DisplayM2down()
-    {
-
-        arrowImage1 = GameObject.Find("M2down").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-    }
-
-    void DisplayM3down()
-    {
-        arrowImage1 = GameObject.Find("M3down").GetComponent<Image>();
-
-        tempColor = arrowImage1.color;
-
-        tempColor.a = 1;
-
-        arrowImage1.color = tempColor;
-
+            arrowImage.color = tempColor;
+        }
     }
 
     // Start is called before the first frame update
     void Start()
     {
+
+        //string[] imageArray = new string[] { "", "1down", "2down", "3down", "1up", "2up", "3up", "Unknown" };
+
         
+
     }
 
     // Update is called once per frame
     void Update()
     {
         
-        if (yesButtonHover == true) 
+        /*if (yesButtonHover == true) 
         {
             if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 0) 
             {
@@ -278,212 +152,9 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
                 arrowImage2.color = tempColor;
             }
+        */
 
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 1)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 2)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 3)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 4)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 5)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 6)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 7)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 8)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 9)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 10)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 11)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 12)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 13)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 14)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 15)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 16)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 17)
-            {
-                arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-                tempColor = arrowImage1.color;
-
-                tempColor.a = 1;
-
-                arrowImage1.color = tempColor;
-            }
-
-            
-
-
-        }
-        else 
-        {
-            arrowImage1 = GameObject.Find("S1down").GetComponent<Image>();
-
-            tempColor = arrowImage1.color;
-
-            tempColor.a = 0;
-
-            arrowImage1.color = tempColor;
-
-            
-        }
-        
+         
         
     }
 }

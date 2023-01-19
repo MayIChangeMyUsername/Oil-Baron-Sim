@@ -30,7 +30,7 @@ public class Yes : MonoBehaviour
         {
             
             FindObjectOfType<GameManager>().eventYes = true;
-
+            FindObjectOfType<YesHoverView>().HideChange();
         }
             
     }

@@ -182,19 +182,20 @@ public class GameManager : MonoBehaviour
 
             if (eventArrayNumber == 14)//large spillage
             {
+                money = money - smallAmount;
                 fiftyFifty = Random.Range(0, 1);
                 if (fiftyFifty == 0)
                 {
-                    money = money - smallAmount;
+                    
                     reputation = reputation + largeAmount;
                 }
                 else
                 {
-                    money = money - smallAmount;
+                    
                     reputation = reputation - largeAmount;
                 }
             }
-            if (eventArrayNumber == 15)//susidise
+            if (eventArrayNumber == 15)//subsidise
             {
                 money = money + largeAmount;
             }
