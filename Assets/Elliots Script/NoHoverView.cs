@@ -10,13 +10,13 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
 
         noButtonHover = true;
-        Debug.Log("over");
+        
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
         noButtonHover = false;
-        Debug.Log("no");
+        
     }
 
     // Start is called before the first frame update

@@ -14,7 +14,7 @@ public class SkipdayLockTest : MonoBehaviour
 
     int lastEventNumber;
 
-    int nextEventNumber;
+    public int nextEventNumber;
 
 
     //List<string> eventList2 = new List<string>();
