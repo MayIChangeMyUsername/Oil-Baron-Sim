@@ -50,6 +50,7 @@ public class SkipdayLockTest : MonoBehaviour
         {
             FindObjectOfType<GameManager>().eventActive = true;
 
+
             GameManager.week++;
             lastEventNumber = FindObjectOfType<GameManager>().eventArrayNumber;
 

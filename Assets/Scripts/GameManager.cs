@@ -68,7 +68,7 @@ public class GameManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        weekText.text = "Week: " + week;
+        weekText.text = "Week " + week;
         //clickText.text = "Click: " + click;
         moneyttxt.text = "" + money;
         sustaintxt.text = "" + sustain;
@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
         
 
 
-        weekText.text = "Week: " + week;
+        weekText.text = "Week " + week;
         //clickText.text = "Click: " + click;
         moneyttxt.text = "" + money;
         sustaintxt.text = "" + sustain;
