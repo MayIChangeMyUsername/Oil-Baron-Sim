@@ -77,13 +77,21 @@ public class Eventtext : MonoBehaviour
         eventArray[7] = "A more effective way of extracting oil has been invented";*/
     }
 
-
+   
 
     // Update is called once per frame
     void Update()
     {
+        if (FindObjectOfType<GameManager>().eventActive == true)
+        {
+            eventText.text = eventArray[FindObjectOfType<GameManager>().eventArrayNumber];
+        }
+        else 
+        {
+            eventText.text = "";
+        }
+        
 
-        eventText.text = eventArray[FindObjectOfType<GameManager>().eventArrayNumber];
         /*
 
                 yes = FindObjectOfType<Yes>().yes1;
