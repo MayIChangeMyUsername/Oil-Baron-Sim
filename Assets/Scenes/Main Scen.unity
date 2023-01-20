@@ -1283,6 +1283,7 @@ GameObject:
   m_Component:
   - component: {fileID: 242606539}
   - component: {fileID: 242606538}
+  - component: {fileID: 242606540}
   m_Layer: 0
   m_Name: Timglas
   m_TagString: Untagged
@@ -1302,8 +1303,8 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: d3cc0617898638240921daac665ebe49, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.46
-  m_Pitch: 1.27
+  m_Volume: 1
+  m_Pitch: 0.97
   Loop: 0
   Mute: 0
   Spatialize: 0
@@ -1401,6 +1402,15 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 41
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!170 &242606540
+AudioDistortionFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 242606537}
+  m_Enabled: 1
+  m_DistortionLevel: 0.3
 --- !u!1 &246097280
 GameObject:
   m_ObjectHideFlags: 0
