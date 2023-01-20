@@ -30,7 +30,7 @@ public class No : MonoBehaviour
         if (FindObjectOfType<GameManager>().eventActive == true)
         {
             FindObjectOfType<GameManager>().eventNo = true;
-
+            GameObject.Find("NoLjud").GetComponent<AudioSource>().Play();
 
         }
 

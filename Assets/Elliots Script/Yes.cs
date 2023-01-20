@@ -30,7 +30,8 @@ public class Yes : MonoBehaviour
         {
             
             FindObjectOfType<GameManager>().eventYes = true;
-
+            FindObjectOfType<YesHoverView>().HideChange();
+            GameObject.Find("YesLjud").GetComponent<AudioSource>().Play();
         }
             
     }

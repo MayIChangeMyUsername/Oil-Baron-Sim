@@ -135,7 +135,7 @@ public class GameManager : MonoBehaviour
                 money = money - smallAmount;
                 reputation = reputation + largeAmount;
             }
-            if (eventArrayNumber == 7) // effective extraction
+            if (eventArrayNumber == 7) // effective extraction (bara ja)
             {
 
                 money = money + smallAmount;
@@ -182,19 +182,20 @@ public class GameManager : MonoBehaviour
 
             if (eventArrayNumber == 14)//large spillage
             {
+                money = money - smallAmount;
                 fiftyFifty = Random.Range(0, 1);
                 if (fiftyFifty == 0)
                 {
-                    money = money - smallAmount;
+                    
                     reputation = reputation + largeAmount;
                 }
                 else
                 {
-                    money = money - smallAmount;
+                    
                     reputation = reputation - largeAmount;
                 }
             }
-            if (eventArrayNumber == 15)//susidise
+            if (eventArrayNumber == 15)//subsidise
             {
                 money = money + largeAmount;
             }
@@ -237,7 +238,7 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 3) // bad rumours (bara ja)
             {
-
+                reputation = reputation - smallAmount;
             }
             if (eventArrayNumber == 4)// oil leak
             {
@@ -246,7 +247,8 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 5) // oil consumption (bara ja)
             {
-
+                money = money + mediumAmount;
+                sustain = sustain - smallAmount;
             }
             if (eventArrayNumber == 6) // social media
             {
@@ -254,7 +256,7 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 7) // effective extraction (bara ja)
             {
-
+                money = money + smallAmount;
             }
             if (eventArrayNumber == 8) //demand
             {
