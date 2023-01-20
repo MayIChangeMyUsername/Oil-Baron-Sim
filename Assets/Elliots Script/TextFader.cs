@@ -12,16 +12,16 @@ public class TextFader : MonoBehaviour
     void Start()
     {
         endText = GameObject.Find("endText").GetComponent<TextMeshProUGUI>();
-        endText.color = new Color(1, 1, 1, textAlpha);
+        endText.color = new Color(0f, 0f, 0f, textAlpha);
     }
 
     // Update is called once per frame
     void Update()
     {
         textAlpha = textAlpha + 0.0015f;
-        if (endText.color != new Color(1, 1, 1, 1f)) 
+        if (endText.color != new Color(0f, 0f, 0f, 1f)) 
         {
-            endText.color = new Color(1, 1, 1, textAlpha);
+            endText.color = new Color(0f, 0f, 0f, textAlpha);
         }
             
     }
