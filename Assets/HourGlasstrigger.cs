@@ -27,16 +27,20 @@ public class HourGlasstrigger : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Space))
+        /*if (Input.GetKeyDown(KeyCode.Space))
         {
             myanimator.SetTrigger(Trigger_ANIM);
-        }
+        }*/
 
 
     }
     void TaskOnClick()
     {
-        myanimator.SetTrigger(Trigger_ANIM);
+        if(FindObjectOfType<GameManager>().eventActive == false) 
+        {
+            myanimator.SetTrigger(Trigger_ANIM);
+        }
+        
     }
 
 }

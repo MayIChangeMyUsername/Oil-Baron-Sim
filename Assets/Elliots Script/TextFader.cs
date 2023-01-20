@@ -12,6 +12,7 @@ public class TextFader : MonoBehaviour
     void Start()
     {
         endText = GameObject.Find("endText").GetComponent<TextMeshProUGUI>();
+        endText.color = new Color(1, 1, 1, textAlpha);
     }
 
     // Update is called once per frame

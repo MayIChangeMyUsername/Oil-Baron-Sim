@@ -16,9 +16,9 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
      {2, 2, 0}, //2
      {1, 1, 0}, //3
      {1, 0, 2}, //4
-     {5, 0, 1},//5
+     {5, 4, 2},//5
      {1, 6, 0},//6
-     {4, 0, 0},//7
+     {4, 0, 1},//7
      {4, 4, 2},//8
      {7, 0, 0}, //9
      {1, 2, 0}, //10

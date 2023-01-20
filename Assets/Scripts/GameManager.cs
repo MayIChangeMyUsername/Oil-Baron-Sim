@@ -126,9 +126,10 @@ public class GameManager : MonoBehaviour
                 sustain = sustain - mediumAmount;
                 money = money - smallAmount;
             }
-            if (eventArrayNumber == 5) //oil consumption (bara ja)
+            if (eventArrayNumber == 5) //oil consumption 
             {
                 money = money + mediumAmount;
+                reputation = reputation + smallAmount;
                 sustain = sustain - smallAmount;
             }
             if (eventArrayNumber == 6) // social media
@@ -136,10 +137,10 @@ public class GameManager : MonoBehaviour
                 money = money - smallAmount;
                 reputation = reputation + largeAmount;
             }
-            if (eventArrayNumber == 7) // effective extraction (bara ja)
+            if (eventArrayNumber == 7) // effective extraction
             {
-
-                money = money + smallAmount;
+                sustain = sustain - smallAmount;
+                money = money + mediumAmount;
             }
             if (eventArrayNumber == 8) // oil demand
             {
@@ -237,7 +238,7 @@ public class GameManager : MonoBehaviour
             {
                 money = money - largeAmount;
             }
-            if (eventArrayNumber == 3) // bad rumours (bara ja)
+            if (eventArrayNumber == 3) // bad rumours
             {
                 reputation = reputation - mediumAmount;
             }
@@ -246,18 +247,19 @@ public class GameManager : MonoBehaviour
                 sustain = sustain - mediumAmount;
                 reputation = reputation - mediumAmount;
             }
-            if (eventArrayNumber == 5) // oil consumption (bara ja)
+            if (eventArrayNumber == 5) // oil consumption
             {
-                money = money + mediumAmount;
+                money = money + largeAmount;
+
                 sustain = sustain - smallAmount;
             }
             if (eventArrayNumber == 6) // social media
             {
                 reputation = reputation + mediumAmount;
             }
-            if (eventArrayNumber == 7) // effective extraction (bara ja)
+            if (eventArrayNumber == 7) // effective extraction
             {
-                money = money + smallAmount;
+                reputation = reputation + smallAmount;
             }
             if (eventArrayNumber == 8) //demand
             {

@@ -543,7 +543,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1802757031
 RectTransform:
   m_ObjectHideFlags: 0
@@ -561,7 +561,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: -359}
+  m_AnchoredPosition: {x: -2031, y: -359}
   m_SizeDelta: {x: 1066.3499, y: 279.3337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1802757032
@@ -670,10 +670,11 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1822848961}
+  - component: {fileID: 1822848964}
   - component: {fileID: 1822848963}
   - component: {fileID: 1822848962}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: endText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -696,7 +697,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 400.33}
+  m_AnchoredPosition: {x: 0, y: -439}
   m_SizeDelta: {x: 1066.3499, y: 279.3337}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1822848962
@@ -719,17 +720,17 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Your Sustainability has reached 0 '
+  m_text: Sustainability:0
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
+  m_sharedMaterial: {fileID: 2140032, guid: dc36b3fdc14f47ebb36fd484a67e268a, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
     serializedVersion: 2
-    rgba: 4285515868
-  m_fontColor: {r: 0.36078432, g: 0.78431374, b: 0.43529412, a: 1}
+    rgba: 4294967295
+  m_fontColor: {r: 1, g: 1, b: 1, a: 1}
   m_enableVertexGradient: 0
   m_colorMode: 3
   m_fontColorGradient:
@@ -796,3 +797,15 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1822848960}
   m_CullTransparentMesh: 1
+--- !u!114 &1822848964
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1822848960}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3cd56354ad25af46bc5d465c173a3ce, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
