@@ -116,9 +116,10 @@ public class GameManager : MonoBehaviour
                 money = money - mediumAmount;
                 reputation = reputation - mediumAmount;
             }
-            if (eventArrayNumber == 3)// bad rumours (bara ja)
+            if (eventArrayNumber == 3)// bad rumours
             {
                 reputation = reputation - smallAmount;
+                money = money - smallAmount;
             }
             if (eventArrayNumber == 4) //oil leak
             {
@@ -238,7 +239,7 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 3) // bad rumours (bara ja)
             {
-                reputation = reputation - smallAmount;
+                reputation = reputation - mediumAmount;
             }
             if (eventArrayNumber == 4)// oil leak
             {

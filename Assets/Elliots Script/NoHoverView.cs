@@ -14,7 +14,7 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
      {4, 1, 0 }, //event 0 effekt osv {m , r , s)
      {0, 1, 0}, //1
      {3, 0, 0}, //2
-     {0, 1, 0}, //3
+     {0, 2, 0}, //3
      {0, 2, 2}, //4
      {5, 0, 1},//5
      {0, 5, 0},//6
