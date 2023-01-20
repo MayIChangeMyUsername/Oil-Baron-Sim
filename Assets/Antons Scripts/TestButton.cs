@@ -15,7 +15,7 @@ public class TestButton : MonoBehaviour
     void TaskOnClick()
     {
         Debug.Log("You have clicked the button!");
-        GameManager.week++;
+        //GameManager.week++;
     }
 
     // Update is called once per frame

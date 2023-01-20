@@ -21,7 +21,7 @@ public class Eventtext : MonoBehaviour
    "One of your oil tankers has sunk, leaving large amounts of oil in the ocean. Do you want to clean it up?",
    "A reporter has asked for a tour on one of your oil rigs. Do you accept the request?",
    "A competing oil corporation has caused an extraordinarily large oil spillage. This has caused outrage against the oil industry. Do you wish to make a public statement?",
-   "The government has offered your company in exchange for us lowering our prices. Do you agree to the deal?",
+   "The government has offered your company subsidies in exchange for us lowering our prices. Do you agree to the deal?",
    "An oil extraction method which is much less harmful for nature has been invented. However it is also more expensive. Do you want to adopt the new method?",
    "A news site has just published a hit piece, detailing some of our shady business practices.\nDo you want to blame a few of your own employees and fire them?"
    };

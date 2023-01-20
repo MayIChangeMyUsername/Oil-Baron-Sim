@@ -7,6 +7,7 @@ public class SaveData
     public int Money;
     public int reputation;
     public int sustain;
+    public int week;
     
 
 
@@ -15,6 +16,7 @@ public class SaveData
         reputation = player.reputation;
         sustain = player.sustain;
         Money = player.money;
+        week = player.week;
      
     }
 

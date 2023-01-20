@@ -8,26 +8,26 @@ public class GameManager : MonoBehaviour
 {
 
 
-   public int money;
+    public int money;
 
-   public int sustain;
+    public int sustain;
 
-   public int reputation;
+    public int reputation;
 
     public int eventArrayNumber; //nummer på eventet som visas
 
-    
+
 
     int fiftyFifty; // används till vissa event
 
     // olika mängder som ändrar på tex money värdet i event
-    int smallAmount = 15; 
+    int smallAmount = 15;
 
     int mediumAmount = 30;
 
     int largeAmount = 45;
 
-    public static int week = 0;
+    public int week = 0;
     public static int click = 1;
 
     public static bool clicki = true; // gammal test variabel
@@ -38,7 +38,7 @@ public class GameManager : MonoBehaviour
     public Text sustaintxt;
     public Text reputationtxt;
 
-    
+
 
     public bool eventYes; // ja till event
 
@@ -46,23 +46,23 @@ public class GameManager : MonoBehaviour
 
     public bool eventActive; // är ett event igång
 
-     
 
-    public void SavePlayer () 
+
+    public void SavePlayer()
     {
         SaveSystem.SavePlayer(this);
     }
 
 
 
-    public void LoadPlayer() 
+    public void LoadPlayer()
     {
         SaveData data = SaveSystem.LoadPlayer();
 
         reputation = data.reputation;
     }
 
-    
+
 
 
     // Start is called before the first frame update
@@ -80,13 +80,13 @@ public class GameManager : MonoBehaviour
 
         sustain = 50;
 
-        
+
     }
 
     // Update is called once per frame
     void Update()
     {
-        
+
 
 
         weekText.text = "Week " + week;
@@ -135,9 +135,9 @@ public class GameManager : MonoBehaviour
                 money = money - smallAmount;
                 reputation = reputation + largeAmount;
             }
-            if (eventArrayNumber == 7) // effective extraction
+            if (eventArrayNumber == 7) // effective extraction (bara ja)
             {
-                
+
                 money = money + smallAmount;
             }
             if (eventArrayNumber == 8) // oil demand
@@ -150,11 +150,11 @@ public class GameManager : MonoBehaviour
             {
                 fiftyFifty = Random.Range(0, 1);
 
-                if (fiftyFifty == 0) 
-                { 
-                    money = money - mediumAmount; 
+                if (fiftyFifty == 0)
+                {
+                    money = money - mediumAmount;
                 }
-                else 
+                else
                 {
                     money = money + mediumAmount;
                 }
@@ -173,28 +173,29 @@ public class GameManager : MonoBehaviour
             if (eventArrayNumber == 12)// sunk ship
             {
                 money = money - mediumAmount;
-               
+
             }
             if (eventArrayNumber == 13)// tour
             {
                 reputation = reputation + mediumAmount; //no more decisions from shop
             }
-           
+
             if (eventArrayNumber == 14)//large spillage
             {
+                money = money - smallAmount;
                 fiftyFifty = Random.Range(0, 1);
-                if(fiftyFifty == 0) 
+                if (fiftyFifty == 0)
                 {
-                    money = money - smallAmount;
+                    
                     reputation = reputation + largeAmount;
                 }
-                else 
+                else
                 {
-                    money = money - smallAmount;
+                    
                     reputation = reputation - largeAmount;
                 }
             }
-            if (eventArrayNumber == 15)//susidise
+            if (eventArrayNumber == 15)//subsidise
             {
                 money = money + largeAmount;
             }
@@ -210,16 +211,16 @@ public class GameManager : MonoBehaviour
                 reputation = reputation - smallAmount;
 
             }
-        
+
 
 
         }
 
-        if(eventNo == true) //det här ändrar på stats om man trycker nej
+        if (eventNo == true) //det här ändrar på stats om man trycker nej
         {
 
             eventActive = false;
-         
+
             eventNo = false;
 
             if (eventArrayNumber == 0) //lower prices
@@ -237,16 +238,17 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 3) // bad rumours (bara ja)
             {
-                
+                reputation = reputation - smallAmount;
             }
             if (eventArrayNumber == 4)// oil leak
             {
                 sustain = sustain - mediumAmount;
-                reputation = reputation -  mediumAmount;
+                reputation = reputation - mediumAmount;
             }
             if (eventArrayNumber == 5) // oil consumption (bara ja)
             {
-
+                money = money + mediumAmount;
+                sustain = sustain - smallAmount;
             }
             if (eventArrayNumber == 6) // social media
             {
@@ -254,7 +256,7 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 7) // effective extraction (bara ja)
             {
-
+                money = money + smallAmount;
             }
             if (eventArrayNumber == 8) //demand
             {
@@ -283,7 +285,7 @@ public class GameManager : MonoBehaviour
             {
                 reputation = reputation - smallAmount;
             }
-           
+
             if (eventArrayNumber == 14)// big spillage
             {
                 reputation = reputation - largeAmount;
@@ -300,13 +302,13 @@ public class GameManager : MonoBehaviour
             {
                 reputation = reputation - mediumAmount;
             }
-            
+
 
         }
 
-     
 
-        
+
+
 
         //de här ser till att alla värden stannar inom 0-100, så att ser ut som procent
 
@@ -339,23 +341,43 @@ public class GameManager : MonoBehaviour
         {
             reputation = 0;
         }
+
+
+        if (money == 0)
+        {
+            Invoke("EndScreen", endScreenDelay);
+        }
+        if (reputation == 0)
+        {
+            Invoke("EndScreen1", endScreenDelay);
+        }
+        if (sustain == 0)
+        {
+            Invoke("EndScreen2", endScreenDelay);
+        }
+
+
     }
+
+
 
     bool gameHasEnded = false;
 
     public float endScreenDelay = 1f;
-    public void EndGame ()
+
+
+
+
+    void EndScreen() //Behövs inte tills vi har lagt till end scenes.
     {
-        if (gameHasEnded == false)
-        {
-            gameHasEnded = true;
-            Debug.Log("Game Over!");
-            Invoke("EndScreen", endScreenDelay); //byter scene till EndScreen efter 1f (1f är tid)
-        }
-            
+        SceneManager.LoadScene("MoneyEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
     }
-    void EndScreen () //Behövs inte tills vi har lagt till end scenes.
+    void EndScreen1() //Behövs inte tills vi har lagt till end scenes.
     {
-        //SceneManager.LoadScene(SceneManager.GetActiveScene().name); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+        SceneManager.LoadScene("ReputationEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+    }
+    void EndScreen2() //Behövs inte tills vi har lagt till end scenes.
+    {
+        SceneManager.LoadScene("SustainEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen nam
     }
 }

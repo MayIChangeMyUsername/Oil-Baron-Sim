@@ -14,8 +14,9 @@ public class SkipdayLockTest : MonoBehaviour
 
     int lastEventNumber;
 
-    int nextEventNumber;
+    public int nextEventNumber;
 
+    bool firstWeek;
 
     //List<string> eventList2 = new List<string>();
 
@@ -32,6 +33,7 @@ public class SkipdayLockTest : MonoBehaviour
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
         FindObjectOfType<GameManager>().eventActive = false;
+        firstWeek = true;
         TaskOnClick();
         
     }
@@ -50,8 +52,8 @@ public class SkipdayLockTest : MonoBehaviour
         {
             FindObjectOfType<GameManager>().eventActive = true;
 
-
-            GameManager.week++;
+            FindObjectOfType<GameManager>().week++;
+            
             lastEventNumber = FindObjectOfType<GameManager>().eventArrayNumber;
 
             ToggleImage(lastEventNumber, false); // gömmer gamla bilden
@@ -70,6 +72,11 @@ public class SkipdayLockTest : MonoBehaviour
 
             ToggleImage(nextEventNumber, true); //visar bilden
 
+            if (!firstWeek) 
+            {
+                GameObject.Find("Timglas").GetComponent<AudioSource>().Play();
+            }
+            firstWeek = false;
         }
 
         void ToggleImage(int eventNumber, bool show) // visar rätt bild
