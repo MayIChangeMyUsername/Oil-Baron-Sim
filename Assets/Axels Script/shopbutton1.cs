@@ -32,9 +32,9 @@ public class shopbutton1 : MonoBehaviour
     }
     void TaskOnClick()
     {
-        FindObjectOfType<GameManager>().money -= 50;
-        FindObjectOfType<GameManager>().sustain += 50;
-        FindObjectOfType<GameManager>().reputation -= 50;
+        FindObjectOfType<GameManager>().money -= 30;
+        FindObjectOfType<GameManager>().sustain += 30;
+        FindObjectOfType<GameManager>().reputation -= 30;
     }
 
 }
