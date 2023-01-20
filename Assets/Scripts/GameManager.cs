@@ -366,7 +366,7 @@ public class GameManager : MonoBehaviour
 
     bool gameHasEnded = false;
 
-    public float endScreenDelay = 1f;
+    public float endScreenDelay = 0.1f;
 
 
 
