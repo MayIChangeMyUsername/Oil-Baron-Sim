@@ -150,7 +150,7 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 9) //swindler
             {
-                fiftyFifty = Random.Range(0, 1);
+                fiftyFifty = Random.Range(0, 2);
 
                 if (fiftyFifty == 0)
                 {
@@ -185,16 +185,16 @@ public class GameManager : MonoBehaviour
             if (eventArrayNumber == 14)//large spillage
             {
                 money = money - smallAmount;
-                fiftyFifty = Random.Range(0, 1);
+                fiftyFifty = Random.Range(0, 2);
                 if (fiftyFifty == 0)
                 {
                     
-                    reputation = reputation + largeAmount;
+                    reputation = reputation - largeAmount;
                 }
                 else
                 {
                     
-                    reputation = reputation - largeAmount;
+                    reputation = reputation + largeAmount;
                 }
             }
             if (eventArrayNumber == 15)//subsidise

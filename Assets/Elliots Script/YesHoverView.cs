@@ -5,13 +5,17 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    string[] imageArray = new string[] {
-        "", "1down", "2down", "3down", "1up", "2up", "3up", "Unknown"
+
+    // VIKTIGT: ändra inte på namnen på pil-bilderna
+
+    //det här skriptet visar ändringen om man svarar ja om man har musen över ja-knappen
+    string[] imageArray = new string[] {  
+        "", "1down", "2down", "3down", "1up", "2up", "3up", "Unknown"  // det här är alla bildernas namn
     };
 
-    int[,] eventEffectsArray = new int[,] 
+    int[,] eventEffectsArray = new int[,] // det här är en array med effekterna av alla events. Varje nummer är en plats i arrayen ovanför
     {
-     {1, 4, 0 }, //event 0 effekt osv {m , r , s)
+     {1, 4, 0 }, //event 0 effekt osv {money , reputation , sustain)
      {5, 0, 2}, //1
      {2, 2, 0}, //2
      {1, 1, 0}, //3
@@ -43,18 +47,18 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
 
 
-    public void OnPointerEnter(PointerEventData eventdata)
+    public void OnPointerEnter(PointerEventData eventdata) // när man börjar ha musen över knappen
     {
         if (FindObjectOfType<GameManager>().eventActive == true)
         {
-            GetChange();
+            GetChange(); // startar voiden
             yesButtonHover = true;
         }
        
         
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData) // när man tar bort muspekaren från knappen
     {
         HideChange();
         yesButtonHover = false;
@@ -63,13 +67,15 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
         void GetChange() 
     {
+
+        // de tre följande frågar game managern vilket event som är aktivt och tar rätt pil
         int  mon = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 0];
 
         int rep = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 1];
 
         int sus = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 2];
 
-
+        //de tre följande kallar på voiden en gång per stat. Inanför parentesen finns namnet på ett objekt i spelet
         ShowChange("M" + imageArray[mon]);
         ShowChange("R" + imageArray[rep]);
         ShowChange("S" + imageArray[sus]);
@@ -79,8 +85,10 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     void ShowChange(string imageRef) 
     {
         //Debug.Log("bild" + imageRef);
-        if(imageRef.Length > 1) 
+        if(imageRef.Length > 1) // om namnet på bilden är längre än bara en symbol (så att den inte påverkar event effects array plats 0, vilket är ingen bild)
         {
+            // nedan tar bildens object, tar dess färg, och sätter dess färgs transparans till max
+
             arrowImage = GameObject.Find(imageRef).GetComponent<Image>();
 
             tempColor = arrowImage.color;
@@ -94,8 +102,10 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
    
    public void HideChange() 
     {
-        for (int i = 1; i < imageArray.Length; i++ )
+        for (int i = 1; i < imageArray.Length; i++) // den här sätter alla bilders transparens till 0, vilket gör de osynliga, tills alla har gjorts osynliga
         {
+            
+
             arrowImage = GameObject.Find("M" + imageArray[i]).GetComponent<Image>();
 
             tempColor = arrowImage.color;
@@ -122,6 +132,8 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
         }
     }
 
+    // bara gammal kod nedanför
+
     // Start is called before the first frame update
     void Start()
     {
@@ -135,7 +147,8 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     // Update is called once per frame
     void Update()
     {
-        
+        // gammal kod
+
         /*if (yesButtonHover == true) 
         {
             if (FindObjectOfType<SkipdayLockTest>().nextEventNumber == 0) 

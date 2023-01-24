@@ -5,13 +5,16 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
+    // VIKTIGT: ändra inte på namnen på pil-bilderna
+
+    //det här skriptet visar ändringen om man svarar no om man har musen över no-knappen
     string[] imageArray = new string[] {
         "", "1down", "2down", "3down", "1up", "2up", "3up", "Unknown"
     };
 
-    int[,] eventEffectsArray = new int[,]
+    int[,] eventEffectsArray = new int[,] // det här är en array med effekterna av alla events. Varje nummer är en plats i arrayen ovanför
     {
-     {4, 1, 0 }, //event 0 effekt osv {m , r , s)
+     {4, 1, 0 }, //event 0 effekt osv {money , reputation , sustain)
      {0, 4, 0}, //1
      {3, 0, 0}, //2
      {0, 2, 0}, //3
@@ -43,33 +46,34 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 
 
-    public void OnPointerEnter(PointerEventData eventdata)
+    public void OnPointerEnter(PointerEventData eventdata)// när man börjar ha musen över knappen
     {
         if (FindObjectOfType<GameManager>().eventActive == true)
         {
-            GetChange();
+            GetChange();// startar voiden
             noButtonHover = true;
         }
 
 
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void OnPointerExit(PointerEventData eventData)// när man tar bort muspekaren från knappen
     {
         HideChange();
         noButtonHover = false;
 
     }
 
-    void GetChange()
+    void GetChange() 
     {
+        // de tre följande frågar game managern vilket event som är aktivt och tar rätt pil
         int mon = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 0];
 
         int rep = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 1];
 
         int sus = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 2];
 
-
+        //de tre följande kallar på voiden en gång per stat. Inanför parentesen finns namnet på ett objekt i spelet
         ShowChange("M" + imageArray[mon]);
         ShowChange("R" + imageArray[rep]);
         ShowChange("S" + imageArray[sus]);
@@ -79,8 +83,10 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     void ShowChange(string imageRef)
     {
         //Debug.Log("bild" + imageRef);
-        if (imageRef.Length > 1)
+        if (imageRef.Length > 1) //om namnet på bilden är längre än bara en symbol (så att den inte påverkar event effects array plats 0, vilket är ingen bild)
         {
+            // nedan tar bildens object, tar dess färg, och sätter dess färgs transparans till max
+
             arrowImage = GameObject.Find(imageRef).GetComponent<Image>();
 
             tempColor = arrowImage.color;
@@ -94,7 +100,7 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     public void HideChange()
     {
-        for (int i = 1; i < imageArray.Length; i++)
+        for (int i = 1; i < imageArray.Length; i++) // den här sätter alla bilders transparens till 0, vilket gör de osynliga, tills alla har gjorts osynliga
         {
             arrowImage = GameObject.Find("M" + imageArray[i]).GetComponent<Image>();
 
