@@ -3641,6 +3641,7 @@ MonoBehaviour:
   sustain: 0
   reputation: 0
   eventArrayNumber: 0
+  endScreenDelay: 1
   week: 0
   weekText: {fileID: 0}
   moneyttxt: {fileID: 0}
@@ -3649,7 +3650,6 @@ MonoBehaviour:
   eventYes: 0
   eventNo: 0
   eventActive: 0
-  endScreenDelay: 1
 --- !u!114 &492722139
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4616,6 +4616,7 @@ MonoBehaviour:
   sustain: 0
   reputation: 0
   eventArrayNumber: 0
+  endScreenDelay: 0
   week: 0
   weekText: {fileID: 1759472022}
   moneyttxt: {fileID: 920574236}
@@ -4624,7 +4625,6 @@ MonoBehaviour:
   eventYes: 0
   eventNo: 0
   eventActive: 0
-  endScreenDelay: 1
 --- !u!212 &737240674
 SpriteRenderer:
   m_ObjectHideFlags: 0

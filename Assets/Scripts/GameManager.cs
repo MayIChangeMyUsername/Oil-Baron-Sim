@@ -16,7 +16,7 @@ public class GameManager : MonoBehaviour
 
     public int eventArrayNumber; //nummer på eventet som visas
 
-
+    public float endScreenDelay = 0.1f;
 
     int fiftyFifty; // används till vissa event
 
@@ -364,9 +364,9 @@ public class GameManager : MonoBehaviour
 
 
 
-    bool gameHasEnded = false;
+   
 
-    public float endScreenDelay = 0.1f;
+    
 
 
 
