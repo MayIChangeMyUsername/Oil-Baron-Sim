@@ -18,7 +18,8 @@ public class TextFader : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        textAlpha = textAlpha + 0.0015f;
+
+        textAlpha = textAlpha + 0.00225f;
         if (endText.color != new Color(0f, 0f, 0f, 1f)) 
         {
             endText.color = new Color(0f, 0f, 0f, textAlpha);
