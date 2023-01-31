@@ -72,7 +72,7 @@ public class SkipdayLockTest : MonoBehaviour
 
             ToggleImage(nextEventNumber, true); //visar bilden
 
-            if (!firstWeek) // 
+            if (!firstWeek) // när
             {
                 GameObject.Find("Timglas").GetComponent<AudioSource>().Play();
             }

@@ -82,6 +82,7 @@ public class Eventtext : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        // visar event texten tills man har svarat
         if (FindObjectOfType<GameManager>().eventActive == true)
         {
             eventText.text = eventArray[FindObjectOfType<GameManager>().eventArrayNumber];
