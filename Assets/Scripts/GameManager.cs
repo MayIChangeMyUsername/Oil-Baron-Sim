@@ -8,11 +8,11 @@ public class GameManager : MonoBehaviour
 {
 
 
-    public int money;
+    public int money; // hur mycket pengar du har
 
-    public int sustain;
+    public int sustain; // hur mycket sustainability du har
 
-    public int reputation;
+    public int reputation; // hur mycket reputation du har
 
     public int eventArrayNumber; //nummer på eventet som visas
 
@@ -95,7 +95,7 @@ public class GameManager : MonoBehaviour
         sustaintxt.text = "" + sustain;
         reputationtxt.text = "" + reputation;
 
-        if (eventYes == true) //det här ändrar på stats om man trycker ja
+        if (eventYes == true) //det här och nedanför ändrar på stats om man trycker ja, olika mycket beroende på event
         {
             eventActive = false;
 
@@ -218,7 +218,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if (eventNo == true) //det här ändrar på stats om man trycker nej
+        if (eventNo == true) //det här och nedanför ändrar på stats om man trycker nej, olika mycket beroende på event
         {
 
             eventActive = false;
@@ -313,7 +313,7 @@ public class GameManager : MonoBehaviour
 
 
 
-        //de här ser till att alla värden stannar inom 0-100, så att ser ut som procent
+        //de här ser till att alla värden stannar inom 0-100, så att är som procent
 
         if (money > 100)
         {
@@ -346,6 +346,8 @@ public class GameManager : MonoBehaviour
         }
 
 
+
+        // om man förlorar tas man till rätt end screen
         if (money == 0)
         {
             Invoke("EndScreen", endScreenDelay);

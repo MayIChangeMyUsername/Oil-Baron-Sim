@@ -52,13 +52,13 @@ public class SkipdayLockTest : MonoBehaviour
         {
             FindObjectOfType<GameManager>().eventActive = true;
 
-            FindObjectOfType<GameManager>().week++;
+            FindObjectOfType<GameManager>().week++; // lägger till en vecka på vecko-timern
             
             lastEventNumber = FindObjectOfType<GameManager>().eventArrayNumber;
 
             ToggleImage(lastEventNumber, false); // gömmer gamla bilden
 
-            nextEventNumber = Random.Range(0, 17);
+            nextEventNumber = Random.Range(0, 17); //väljer ett event av 18
 
             while (lastEventNumber == nextEventNumber) // ser till att inte samma event kommer två gånger i rad
             {
@@ -72,7 +72,7 @@ public class SkipdayLockTest : MonoBehaviour
 
             ToggleImage(nextEventNumber, true); //visar bilden
 
-            if (!firstWeek) 
+            if (!firstWeek) // 
             {
                 GameObject.Find("Timglas").GetComponent<AudioSource>().Play();
             }

@@ -19,8 +19,8 @@ public class TextFader : MonoBehaviour
     void Update()
     {
 
-        textAlpha = textAlpha + 0.00225f;
-        if (endText.color != new Color(0f, 0f, 0f, 1f)) 
+        textAlpha = textAlpha + 0.00225f; // lägger till transparens
+        if (endText.color != new Color(0f, 0f, 0f, 1f))  //slutar lägga till när texten är helt synlig
         {
             endText.color = new Color(0f, 0f, 0f, textAlpha);
         }
