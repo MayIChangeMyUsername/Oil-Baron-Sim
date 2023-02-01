@@ -5,7 +5,7 @@ using UnityEngine.EventSystems;
 using UnityEngine.UI;
 public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
-    // VIKTIGT: ändra inte på namnen på pil-bilderna
+    // VIKTIGT: ändra inte på namnen på pil-bilderna i main scenen i unity
 
     //det här skriptet visar ändringen om man svarar no om man har musen över no-knappen
     string[] imageArray = new string[] {
@@ -38,11 +38,11 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
 
 
-    public bool noButtonHover;
+    public bool noButtonHover; //om man hoverar över "no" knappen eller inte
 
-    Color tempColor;
+    Color tempColor; //temporär färg
 
-    Image arrowImage;
+    Image arrowImage; //pilen som ska visas
 
 
 
@@ -73,7 +73,7 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
         int sus = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 2];
 
-        //de tre följande kallar på voiden en gång per stat. Inanför parentesen finns namnet på ett objekt i spelet
+        //de tre följande kallar på voiden en gång för varje stat. Inanför parentesen finns namnet på ett objekt i spelet
         ShowChange("M" + imageArray[mon]);
         ShowChange("R" + imageArray[rep]);
         ShowChange("S" + imageArray[sus]);
@@ -102,13 +102,13 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         for (int i = 1; i < imageArray.Length; i++) // den här sätter alla bilders transparens till 0, vilket gör de osynliga, tills alla har gjorts osynliga
         {
-            arrowImage = GameObject.Find("M" + imageArray[i]).GetComponent<Image>();
+            arrowImage = GameObject.Find("M" + imageArray[i]).GetComponent<Image>(); //hittar rätt, bild vare arrayen längst upp
 
-            tempColor = arrowImage.color;
+            tempColor = arrowImage.color; // tar pilens färg
 
-            tempColor.a = 0;
+            tempColor.a = 0; //sätter alpha-värdet till 0 (alltså transparant)
 
-            arrowImage.color = tempColor;
+            arrowImage.color = tempColor; //gör bilden samma färg som tempcolor, alltså transparant
 
             arrowImage = GameObject.Find("R" + imageArray[i]).GetComponent<Image>();
 
