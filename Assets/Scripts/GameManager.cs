@@ -3,9 +3,12 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
+using TMPro;
 
 public class GameManager : MonoBehaviour
 {
+
+    [SerializeField] TextMeshProUGUI highScoreText;
 
 
     public int money; // hur mycket pengar du har
@@ -80,6 +83,7 @@ public class GameManager : MonoBehaviour
 
         sustain = 50;
 
+        UpdateHighScore();
 
     }
 
@@ -90,6 +94,7 @@ public class GameManager : MonoBehaviour
 
 
         weekText.text = "Week " + week;
+        CheckHighScore();
         //clickText.text = "Click: " + click;
         moneyttxt.text = "" + money;
         sustaintxt.text = "" + sustain;
@@ -371,7 +376,18 @@ public class GameManager : MonoBehaviour
     
 
 
+    void CheckHighScore()
+    {
+        if(week > PlayerPrefs.GetInt("HighScore", 0))
+        {
+            PlayerPrefs.SetInt("HighScore", week);
+        }
+    }
 
+    void UpdateHighScore()
+    {
+        highScoreText.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
+    }
 
     void EndScreen() //Behövs inte tills vi har lagt till end scenes.
     {
