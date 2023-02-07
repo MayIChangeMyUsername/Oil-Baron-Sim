@@ -9,7 +9,7 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     //det här skriptet visar ändringen om man svarar no om man har musen över no-knappen
     string[] imageArray = new string[] {
-        "", "1down", "2down", "3down", "1up", "2up", "3up", "Unknown"
+        "", "1down", "2down", "3down", "1up", "2up", "3up", "Unknown" // Den här arrayen lagrar typen av pil, genom en del av namnet på pil-objekten i unity. Senare i skriptet ges resten av namnet
     };
 
     int[,] eventEffectsArray = new int[,] // det här är en array med effekterna av alla events. Varje nummer är en plats i arrayen ovanför
@@ -74,7 +74,7 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
         int sus = eventEffectsArray[FindObjectOfType<GameManager>().eventArrayNumber, 2];
 
         //de tre följande kallar på voiden en gång för varje stat. Inanför parentesen finns namnet på ett objekt i spelet
-        ShowChange("M" + imageArray[mon]);
+        ShowChange("M" + imageArray[mon]); //varje pil har en bokstav i namnet som visar vilket stat som påverkas. Här kombineras rätt stat (M, R eller S) med rätt typ av pil. Piltyperna finns i en array längs upp
         ShowChange("R" + imageArray[rep]);
         ShowChange("S" + imageArray[sus]);
 
