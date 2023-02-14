@@ -359,14 +359,30 @@ public class GameManager : MonoBehaviour
         if (money == 0)
         {
             Invoke("EndScreen", endScreenDelay);
+            money = 50;
+            sustain = 50;
+            reputation = 50;
+            week = 0;
+            SavePlayer();
+
         }
         if (reputation == 0)
         {
             Invoke("EndScreen1", endScreenDelay);
+            money = 50;
+            sustain = 50;
+            reputation = 50;
+            week = 0;
+            SavePlayer();
         }
         if (sustain == 0)
         {
             Invoke("EndScreen2", endScreenDelay);
+            money = 50;
+            sustain = 50;
+            reputation = 50;
+            week = 0;
+            SavePlayer();
         }
 
 
