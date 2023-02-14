@@ -20,4 +20,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/ReputationEnding.unity
     guid: 4d341d563dfc1f7409ef68bd2c6ee489
+  - enabled: 1
+    path: Assets/Scenes/Tutorial Scen.unity
+    guid: a3273e34565e0d24694a276c018cdb71
   m_configObjects: {}

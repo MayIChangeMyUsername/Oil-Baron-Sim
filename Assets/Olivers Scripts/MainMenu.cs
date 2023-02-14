@@ -7,9 +7,9 @@ public class MainMenu : MonoBehaviour
 {
   public void PlayGame ()
     {
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1); //laddar nästa scen när man klickar på en button med playgame (). -oliver
     }
-    public void QuitGame()
+    public void QuitGame() //Lämnar spelet. 
     {
         Debug.Log("QUIT!");
         Application.Quit();
