@@ -62,7 +62,10 @@ public class GameManager : MonoBehaviour
     {
         SaveData data = SaveSystem.LoadPlayer();
 
+        week = data.week;
+        money = data.Money;
         reputation = data.reputation;
+        sustain = data.sustain;
     }
 
 
