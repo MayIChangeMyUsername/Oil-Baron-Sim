@@ -50,10 +50,17 @@ public class GameManager : MonoBehaviour
     public bool eventActive; // är ett event igång
 
 
-
-    public void SavePlayer()
+    float timer = 0; // Delay till spar knappen så att veckan hinner byta innan spelet sparar (Elliot)
+    public void SavePlayer() // Delay till spar knappen så att veckan hinner byta innan spelet sparar (Elliot)
     {
-        SaveSystem.SavePlayer(this);
+        timer += Time.deltaTime;
+        if (timer > 2f)
+        {
+            SaveSystem.SavePlayer(this);
+            timer = 0;
+        }
+
+        
     }
 
 
@@ -66,6 +73,7 @@ public class GameManager : MonoBehaviour
         money = data.Money;
         reputation = data.reputation;
         sustain = data.sustain;
+        FindObjectOfType<SkipdayLockTest>().nextEventNumber = data.currentEventNum;
     }
 
 

@@ -8,7 +8,7 @@ public class SaveData
     public int reputation;
     public int sustain;
     public int week;
-    
+    public int currentEventNum;
 
 
     public SaveData (GameManager player ) 
@@ -17,7 +17,9 @@ public class SaveData
         sustain = player.sustain;
         Money = player.money;
         week = player.week;
-     
+        //currentEventNum = player.FindObjectOfType<SkipdayLockTest>().nextEventNumber;
+
+
     }
 
     
