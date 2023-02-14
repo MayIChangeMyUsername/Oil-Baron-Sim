@@ -20,6 +20,6 @@ public class ReputationIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value = FindObjectOfType<GameManager>().reputation;
+        slider.value = FindObjectOfType<GameManager>().reputation; //När man ändrar slider value så ändrar den mängden "Reputation" du har. -Oliver
     }
 }

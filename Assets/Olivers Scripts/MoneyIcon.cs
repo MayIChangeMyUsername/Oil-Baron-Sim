@@ -20,6 +20,6 @@ public class MoneyIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value = FindObjectOfType<GameManager>().money;
+        slider.value = FindObjectOfType<GameManager>().money; //När man ändrar slider value så ändrar den mängden "money" du har. -Oliver
     }
 }

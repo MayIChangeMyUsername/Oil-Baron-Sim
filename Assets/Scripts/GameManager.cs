@@ -11,19 +11,19 @@ public class GameManager : MonoBehaviour
     [SerializeField] TextMeshProUGUI highScoreText;
 
 
-    public int money; // hur mycket pengar du har
+    public int money; // hur mycket pengar du har (Elliot)
 
-    public int sustain; // hur mycket sustainability du har
+    public int sustain; // hur mycket sustainability du har (Elliot)
 
-    public int reputation; // hur mycket reputation du har
+    public int reputation; // hur mycket reputation du har (Elliot)
 
     public int eventArrayNumber; //nummer på eventet som visas
 
     public float endScreenDelay = 0.1f;
 
-    int fiftyFifty; // används till vissa event
+    int fiftyFifty; // används till vissa event (Elliot)
 
-    // olika mängder som ändrar på tex money värdet i event
+    // olika mängder som ändrar på tex money värdet i event (Elliot)
     int smallAmount = 15;
 
     int mediumAmount = 30;
@@ -80,11 +80,11 @@ public class GameManager : MonoBehaviour
         sustaintxt.text = "" + sustain;
         reputationtxt.text = "" + reputation;
 
-        money = 50;
+        money = 50; //(Elliot)
 
-        reputation = 50;
+        reputation = 50; //(Elliot)
 
-        sustain = 50;
+        sustain = 50; //(Elliot)
 
         UpdateHighScore();
 
@@ -103,7 +103,7 @@ public class GameManager : MonoBehaviour
         sustaintxt.text = "" + sustain;
         reputationtxt.text = "" + reputation;
 
-        if (eventYes == true) //det här och nedanför ändrar på stats om man trycker ja, olika mycket beroende på event
+        if (eventYes == true) //det här och nedanför ändrar på stats om man trycker ja, olika mycket beroende på event (Elliot)
         {
             eventActive = false;
 
@@ -226,7 +226,7 @@ public class GameManager : MonoBehaviour
 
         }
 
-        if (eventNo == true) //det här och nedanför ändrar på stats om man trycker nej, olika mycket beroende på event
+        if (eventNo == true) //det här och nedanför ändrar på stats om man trycker nej, olika mycket beroende på event //(Elliot)
         {
 
             eventActive = false;
@@ -321,9 +321,9 @@ public class GameManager : MonoBehaviour
 
 
 
-        //de här ser till att alla värden stannar inom 0-100, så att är som procent
+        //de här ser till att alla värden stannar inom 0-100, så att är som procent //(Elliot)
 
-        if (money > 100)
+        if (money > 100) 
         {
             money = 100;
         }
