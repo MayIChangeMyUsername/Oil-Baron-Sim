@@ -20,7 +20,7 @@ public class SustainabilityIcon : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        slider.value = FindObjectOfType<GameManager>().sustain;
+        slider.value = FindObjectOfType<GameManager>().sustain; //När man ändrar slider value så ändrar den mängden "Sustainability" du har. -Oliver
 
     }
 }

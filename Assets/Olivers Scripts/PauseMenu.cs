@@ -12,7 +12,7 @@ public class PauseMenu : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape)) //När man trycker "escape" så pausas spelet och öppnar PausMenu 
+        if (Input.GetKeyDown(KeyCode.Escape)) //När man trycker "escape" så pausas spelet och öppnar PausMenu. -Oliver
         {
             if (GameIsPaused)
             {
@@ -26,14 +26,14 @@ public class PauseMenu : MonoBehaviour
     }
     public void Resume ()
     {
-        pauseMenuUI.SetActive(false); //startar spelet. 
+        pauseMenuUI.SetActive(false); //startar spelet efter paus. -Oliver
         Time.timeScale = 1f;
             GameIsPaused = false;
 
     }
     void Pause ()
     {
-        pauseMenuUI.SetActive(true); //pausar spelet
+        pauseMenuUI.SetActive(true); //pausar spelet -Oliver
         Time.timeScale = 0f;
         GameIsPaused = true;
     }
@@ -41,10 +41,10 @@ public class PauseMenu : MonoBehaviour
     public void LoadMenu()
     {
        
-        SceneManager.LoadScene("Olivers Scen"); //laddar "Olivers Scen" som innehåller MainMenu
+        SceneManager.LoadScene("Olivers Scen"); //laddar "Olivers Scen" som innehåller MainMenu. -Oliver
     }
     public void QuitGame() 
     {
-        Application.Quit(); //stänger spelet när man klickar på knappen med den funktionen. 
+        Application.Quit(); //stänger spelet när man klickar på knappen med den funktionen. -Oliver
     }
 }
