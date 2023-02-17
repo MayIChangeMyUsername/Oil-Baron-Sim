@@ -27,9 +27,9 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
      {0, 3, 0}, //10
      {0, 1, 2},//11
      {0, 2, 3},//12
-     {0, 1, 0},//13
+     {0, 0, 0},//13
      {0, 3, 0},//14
-     {0, 2, 0},//15
+     {0, 0, 5},//15
      {0, 1, 0},//16
      {0, 2, 0}//17
      

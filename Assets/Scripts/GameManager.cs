@@ -73,7 +73,7 @@ public class GameManager : MonoBehaviour
         money = data.Money;
         reputation = data.reputation;
         sustain = data.sustain;
-        FindObjectOfType<SkipdayLockTest>().nextEventNumber = data.currentEventNum;
+        //FindObjectOfType<SkipdayLockTest>().nextEventNumber = data.currentEventNum;
     }
 
 
@@ -195,7 +195,8 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 13)// tour
             {
-                reputation = reputation + mediumAmount; //no more decisions from shop
+                reputation = reputation + smallAmount;
+                money = money - smallAmount;
             }
 
             if (eventArrayNumber == 14)//large spillage
@@ -215,7 +216,8 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 15)//subsidise
             {
-                money = money + largeAmount;
+                money = money + mediumAmount;
+                reputation = reputation + smallAmount;
             }
             if (eventArrayNumber == 16)//sustainable extraction
             {
@@ -302,7 +304,8 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 13)//tour
             {
-                reputation = reputation - smallAmount;
+                
+                
             }
 
             if (eventArrayNumber == 14)// big spillage
@@ -311,7 +314,7 @@ public class GameManager : MonoBehaviour
             }
             if (eventArrayNumber == 15)//subsidies
             {
-                reputation = reputation - mediumAmount;
+                sustain = sustain + mediumAmount;
             }
             if (eventArrayNumber == 16)//sustainable extraction
             {

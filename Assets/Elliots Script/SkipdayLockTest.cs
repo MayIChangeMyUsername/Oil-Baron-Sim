@@ -41,8 +41,12 @@ public class SkipdayLockTest : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
-       
+
+        if (Input.GetKeyDown(KeyCode.Space))
+        {
+            TaskOnClick();
+
+        }
 
     }
 
@@ -100,7 +104,7 @@ public class SkipdayLockTest : MonoBehaviour
 
             eventImage.color = tempAlpha;
 
-
+            //FindObjectOfType<No>().ResetColor;
 
         }
     }

@@ -3,11 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
+//Allr i detta script utom mainCanvas delarna är gjorda av Oliver, main canvas delarn är av Elliot
+
 public class PauseMenu : MonoBehaviour
 {
     public static bool GameIsPaused = false;
 
-    public GameObject pauseMenuUI; 
+    public GameObject pauseMenuUI;
+
+    public GameObject mainCanvas; //Elliot
 
     // Update is called once per frame
     void Update()
@@ -29,6 +33,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(false); //startar spelet efter paus. -Oliver
         Time.timeScale = 1f;
             GameIsPaused = false;
+        mainCanvas.SetActive(true); //startar spelet efter paus - Elliot
 
     }
     void Pause ()
@@ -36,6 +41,7 @@ public class PauseMenu : MonoBehaviour
         pauseMenuUI.SetActive(true); //pausar spelet -Oliver
         Time.timeScale = 0f;
         GameIsPaused = true;
+        mainCanvas.SetActive(false); //pausar spelet - Elliot
     }
 
     public void LoadMenu()

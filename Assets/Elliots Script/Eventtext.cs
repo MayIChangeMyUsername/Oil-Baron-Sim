@@ -19,7 +19,7 @@ public class Eventtext : MonoBehaviour
    "People are protesting outside your office. Do you want to bribe the police to stop them?",
    "One of your oil rigs is in need of massive repairs. You could either hire experienced workers who can repair without harming marine life,\nor let your own workers repair despite the damage it would cause. Do you want to hire outsourced workers?",
    "One of your oil tankers has sunk, leaving large amounts of oil in the ocean. Do you want to clean it up?",
-   "A reporter has asked for a tour on one of your oil rigs. Do you accept the request?",
+   "A reporter has asked for a tour on one of your oil rigs. It would give us a better public image, but would lower oil production rate temporarily. Do you accept the request?",
    "A competing oil corporation has caused an extraordinarily large oil spillage. This has caused outrage against the oil industry. Do you wish to make a public statement?",
    "The government has offered your company subsidies in exchange for us lowering our prices. Do you agree to the deal?",
    "An oil extraction method which is much less harmful for nature has been invented. However it is also more expensive. Do you want to adopt the new method?",
