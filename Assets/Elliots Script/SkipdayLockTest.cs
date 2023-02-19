@@ -24,7 +24,7 @@ public class SkipdayLockTest : MonoBehaviour
 
     GameObject No;
 
-
+    Button btn;
 
 
     // Start is called before the first frame update
@@ -33,7 +33,7 @@ public class SkipdayLockTest : MonoBehaviour
 
 
       
-        Button btn = yourButton.GetComponent<Button>();
+        btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
         FindObjectOfType<GameManager>().eventActive = false;
         firstWeek = true;
@@ -58,6 +58,16 @@ public class SkipdayLockTest : MonoBehaviour
 
         }
 
+        if (FindObjectOfType<GameManager>().eventActive == false) 
+        {
+
+            btn.interactable = true;
+
+        }
+        else 
+        {
+            btn.interactable = false;
+        }
     }
 
     void TaskOnClick()
