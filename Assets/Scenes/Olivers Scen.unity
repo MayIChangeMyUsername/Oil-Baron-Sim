@@ -5415,12 +5415,12 @@ GameObject:
   - component: {fileID: 2009150113}
   - component: {fileID: 2009150117}
   m_Layer: 5
-  m_Name: Pause Canvas
+  m_Name: "Pause Canvas (Beh\xF6vs paus canvas i main menyn? -Elliot)"
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &2009150113
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5516,6 +5516,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   pauseMenuUI: {fileID: 890809172}
+  mainCanvas: {fileID: 0}
 --- !u!1 &2037153689
 GameObject:
   m_ObjectHideFlags: 0

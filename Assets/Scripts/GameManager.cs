@@ -50,31 +50,35 @@ public class GameManager : MonoBehaviour
     public bool eventActive; // är ett event igång
 
 
-    float timer = 0; // Delay till spar knappen så att veckan hinner byta innan spelet sparar (Elliot)
-    public void SavePlayer() // Delay till spar knappen så att veckan hinner byta innan spelet sparar (Elliot)
+    
+    public void SavePlayer() //sätts igång när man går till nästa vecka, genom skipdaylocktest skriptet
     {
-        timer += Time.deltaTime;
-        if (timer > 2f)
-        {
-            SaveSystem.SavePlayer(this);
-            timer = 0;
-        }
-
         
+        
+        
+            SaveSystem.SavePlayer(this); //Axel
+
+
+
+
     }
 
 
 
-    public void LoadPlayer()
+    public void LoadPlayer() //Axel
     {
-        SaveData data = SaveSystem.LoadPlayer();
+        SaveData data = SaveSystem.LoadPlayer(); //Axel
 
-        week = data.week;
-        money = data.Money;
-        reputation = data.reputation;
-        sustain = data.sustain;
-        //FindObjectOfType<SkipdayLockTest>().nextEventNumber = data.currentEventNum;
+        week = data.week; //Axel
+        money = data.Money; //Axel
+        reputation = data.reputation; //Axel
+        sustain = data.sustain; //Axel
+        eventArrayNumber = data.eventArrayNumber; //elliot
+
     }
+
+
+
 
 
 
@@ -369,37 +373,40 @@ public class GameManager : MonoBehaviour
         // om man förlorar tas man till rätt end screen
         if (money == 0)
         {
+            ResetSave();
             Invoke("EndScreen", endScreenDelay);
-            money = 50;
-            sustain = 50;
-            reputation = 50;
-            week = 0;
-            SavePlayer();
+
 
         }
         if (reputation == 0)
         {
+            ResetSave();
             Invoke("EndScreen1", endScreenDelay);
-            money = 50;
-            sustain = 50;
-            reputation = 50;
-            week = 0;
-            SavePlayer();
+           
         }
         if (sustain == 0)
         {
+            ResetSave();
             Invoke("EndScreen2", endScreenDelay);
-            money = 50;
-            sustain = 50;
-            reputation = 50;
-            week = 0;
-            SavePlayer();
+            
         }
 
 
     }
 
+    void ResetSave() //Elliot och Axel
+    {
 
+        PlayerPrefs.SetInt("week", week); //sparar veckonummret man förlorade på - Elliot
+
+        money = 50;
+        sustain = 50;
+        reputation = 50;
+        week = 1;
+        FindObjectOfType<SkipdayLockTest>().RollEventDice();
+        SavePlayer();
+
+    }
 
    
 
@@ -422,13 +429,16 @@ public class GameManager : MonoBehaviour
     void EndScreen() //Behövs inte tills vi har lagt till end scenes.
     {
         SceneManager.LoadScene("MoneyEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+        Debug.Log("Money");
     }
     void EndScreen1() //Behövs inte tills vi har lagt till end scenes.
     {
         SceneManager.LoadScene("ReputationEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+        Debug.Log("Rep");
     }
     void EndScreen2() //Behövs inte tills vi har lagt till end scenes.
     {
         SceneManager.LoadScene("SustainEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen nam
+        Debug.Log("Sus");
     }
 }

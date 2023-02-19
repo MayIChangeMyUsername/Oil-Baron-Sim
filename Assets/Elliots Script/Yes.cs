@@ -8,12 +8,7 @@ public class Yes : MonoBehaviour
     public Button yourButton;
 
 
-    float imageAlpha = 0f;
-
-
-    Image Yes2;
-
-    Color Yes2Color;
+    ImageFade yesImage;
 
 
     // Start is called before the first frame update
@@ -22,9 +17,7 @@ public class Yes : MonoBehaviour
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
 
-        Yes2 = GameObject.Find("No2").GetComponent<Image>();
-        Yes2Color = Yes2.color;
-        Yes2Color.a = 1f;
+        yesImage = GetComponentInChildren<ImageFade>();
 
     }
 
@@ -46,7 +39,8 @@ public class Yes : MonoBehaviour
             FindObjectOfType<GameManager>().eventYes = true;
             FindObjectOfType<YesHoverView>().HideChange();
             GameObject.Find("YesLjud").GetComponent<AudioSource>().Play();
-            Yes2.color = Yes2Color;
+
+            yesImage.FadeIn();
         }
             
     }

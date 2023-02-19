@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
     // VIKTIGT: ändra inte på namnen på pil-bilderna i main scenen i unity
@@ -44,7 +45,7 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
     Image arrowImage; //pilen som ska visas
 
-
+    TextMeshProUGUI arrowText;
 
     public void OnPointerEnter(PointerEventData eventdata)// när man börjar ha musen över knappen
     {
@@ -94,6 +95,14 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             tempColor.a = 1;
 
             arrowImage.color = tempColor;
+
+            arrowText = arrowImage.GetComponentInChildren<TextMeshProUGUI>();
+
+            tempColor = arrowText.color;
+
+            tempColor.a = 1;
+
+            arrowText.color = tempColor;
         }
 
     }
@@ -102,6 +111,7 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
     {
         for (int i = 1; i < imageArray.Length; i++) // den här sätter alla bilders transparens till 0, vilket gör de osynliga, tills alla har gjorts osynliga
         {
+            //money
             arrowImage = GameObject.Find("M" + imageArray[i]).GetComponent<Image>(); //hittar rätt, bild vare arrayen längst upp
 
             tempColor = arrowImage.color; // tar pilens färg
@@ -109,6 +119,16 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             tempColor.a = 0; //sätter alpha-värdet till 0 (alltså transparant)
 
             arrowImage.color = tempColor; //gör bilden samma färg som tempcolor, alltså transparant
+
+            arrowText = arrowImage.GetComponentInChildren<TextMeshProUGUI>(); //hittar rätt text
+
+            tempColor = arrowText.color; // tar textens färg
+
+            tempColor.a = 0;
+
+            arrowText.color = tempColor;
+
+            //rep
 
             arrowImage = GameObject.Find("R" + imageArray[i]).GetComponent<Image>();
 
@@ -118,6 +138,16 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
 
             arrowImage.color = tempColor;
 
+            arrowText = arrowImage.GetComponentInChildren<TextMeshProUGUI>();
+
+            tempColor = arrowText.color;
+
+            tempColor.a = 0;
+
+            arrowText.color = tempColor;
+
+            //sus
+
             arrowImage = GameObject.Find("S" + imageArray[i]).GetComponent<Image>();
 
             tempColor = arrowImage.color;
@@ -125,6 +155,14 @@ public class NoHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHand
             tempColor.a = 0;
 
             arrowImage.color = tempColor;
+
+            arrowText = arrowImage.GetComponentInChildren<TextMeshProUGUI>();
+
+            tempColor = arrowText.color;
+
+            tempColor.a = 0;
+
+            arrowText.color = tempColor;
         }
     }
     // Start is called before the first frame update

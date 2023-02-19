@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using TMPro;
 public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHandler
 {
 
@@ -10,7 +11,7 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     //det här skriptet visar ändringen om man svarar ja om man har musen över ja-knappen
     string[] imageArray = new string[] {  
-        "", "1down", "2down", "3down", "1up", "2up", "3up", "Unknown"  // det här är alla bildernas namn
+        "", "1down", "2down", "3down", "1up", "2up", "3up", "Unknown"  // det här är del av alla bildernas namn
     };
 
     int[,] eventEffectsArray = new int[,] // det här är en array med effekterna av alla events. Varje nummer är en plats i arrayen ovanför
@@ -45,7 +46,7 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
     Image arrowImage;
 
-
+    TextMeshProUGUI arrowText;
 
     public void OnPointerEnter(PointerEventData eventdata) // när man börjar ha musen över knappen
     {
@@ -96,6 +97,14 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             tempColor.a = 1;
 
             arrowImage.color = tempColor;
+
+            arrowText = arrowImage.GetComponentInChildren<TextMeshProUGUI>();
+
+            tempColor = arrowText.color;
+
+            tempColor.a = 1;
+
+            arrowText.color = tempColor;
         }
    
     }
@@ -104,8 +113,9 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
     {
         for (int i = 1; i < imageArray.Length; i++) // den här sätter alla bilders transparens till 0, vilket gör de osynliga, tills alla har gjorts osynliga
         {
-            
+            //kommentarer som förklara mer finns i NoHoverView under dens HideChange
 
+            //money
             arrowImage = GameObject.Find("M" + imageArray[i]).GetComponent<Image>();
 
             tempColor = arrowImage.color;
@@ -113,6 +123,16 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             tempColor.a = 0;
 
             arrowImage.color = tempColor;
+
+            arrowText = arrowImage.GetComponentInChildren<TextMeshProUGUI>();
+
+            tempColor = arrowText.color;
+
+            tempColor.a = 0;
+
+            arrowText.color = tempColor;
+
+            //rep
 
             arrowImage = GameObject.Find("R" + imageArray[i]).GetComponent<Image>();
 
@@ -122,6 +142,16 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
 
             arrowImage.color = tempColor;
 
+            arrowText = arrowImage.GetComponentInChildren<TextMeshProUGUI>();
+
+            tempColor = arrowText.color;
+
+            tempColor.a = 0;
+
+            arrowText.color = tempColor;
+
+            //sus
+
             arrowImage = GameObject.Find("S" + imageArray[i]).GetComponent<Image>();
 
             tempColor = arrowImage.color;
@@ -129,6 +159,14 @@ public class YesHoverView : MonoBehaviour, IPointerEnterHandler, IPointerExitHan
             tempColor.a = 0;
 
             arrowImage.color = tempColor;
+
+            arrowText = arrowImage.GetComponentInChildren<TextMeshProUGUI>();
+
+            tempColor = arrowText.color;
+
+            tempColor.a = 0;
+
+            arrowText.color = tempColor;
         }
     }
 

@@ -8,16 +8,10 @@ public class No : MonoBehaviour
     public Button yourButton;
 
 
-    float imageAlpha = 0f;
+    ImageFade noImage;
 
 
-    Image No2;
 
-    Color No2Color;
-
-    Color No2ColorReset;
-
-    float timer = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -25,11 +19,8 @@ public class No : MonoBehaviour
         Button btn = yourButton.GetComponent<Button>();
         btn.onClick.AddListener(TaskOnClick);
 
-        No2 = GameObject.Find("No2").GetComponent<Image>();
-        No2Color = No2.color;
-        No2ColorReset = No2.color;
-        No2Color.a = 1f;
-        
+        noImage = GetComponentInChildren<ImageFade>();
+
     }
 
     // Update is called once per frame
@@ -48,16 +39,13 @@ public class No : MonoBehaviour
             
             FindObjectOfType<GameManager>().eventNo = true;
             GameObject.Find("NoLjud").GetComponent<AudioSource>().Play();
-            No2.color = No2Color;
-            
-            
+
+
+            noImage.FadeIn();
         }
 
     }
 
-    public void ResetColor()
-    {
-        No2.color = No2ColorReset;
-    }
+
 
 }
