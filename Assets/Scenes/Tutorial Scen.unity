@@ -1869,10 +1869,11 @@ MonoBehaviour:
     Earth.\n\nAll three statistics are values between 0 and 100. They all start at
     50. Your decisions impact your statistics. If one of them reaches 0 you lose.
     \n\nAnother way to impact you statistics is by using the telephone. By calling
-    you can exchange 30 in two of your statistics for 30 in one of your statistics.\n\nIn
-    the pause meny, accessed by pressing escape, you can return to the main menu.
-    If you are in the game you can also load your save file there. The game is saved
-    everytime you press the \"Next Week\" button. If you lose your save file is overwritten.\n"
+    acquaintances you can exchange 30 in two of your statistics for 30 in one of
+    your statistics.\n\nIn the Pause menu, accessed by pressing escape, you can return
+    to the Main menu. If you are in the game you can also load your save file there.
+    The game is saved everytime you press the \"Next Week\" button. If you lose your
+    save file is overwritten.\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
