@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public int week = 0;
     public static int click = 1;
 
-    public static bool clicki = true; // gammal test variabel
+    public static bool clicki = true; // gammal test variabel (Anton)
 
     public Text weekText;
     //public Text clickText;
@@ -374,21 +374,20 @@ public class GameManager : MonoBehaviour
         if (money == 0)
         {
             ResetSave();
-            Invoke("EndScreen", endScreenDelay);
-
+            Invoke("EndScreen", endScreenDelay); //startar endscreen efter endscreendelay -Oliver
 
         }
         if (reputation == 0)
         {
             ResetSave();
-            Invoke("EndScreen1", endScreenDelay);
-           
+            Invoke("EndScreen1", endScreenDelay); //startar endscreen efter endscreendelay -Oliver
+
         }
         if (sustain == 0)
         {
             ResetSave();
-            Invoke("EndScreen2", endScreenDelay);
-            
+            Invoke("EndScreen2", endScreenDelay); //startar endscreen efter endscreendelay -Oliver
+
         }
 
 
@@ -413,7 +412,7 @@ public class GameManager : MonoBehaviour
     
 
 
-    void CheckHighScore()
+    void CheckHighScore() // Skapar en fil inom din dator som sparar ditt higscore du fått egenom din senaste playthrough (Anton)
     {
         if(week > PlayerPrefs.GetInt("HighScore", 0))
         {
@@ -421,24 +420,24 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateHighScore()
+    void UpdateHighScore() // Updaterar det highscoret du fått genom din senaste playthrough (Anton)
     {
         highScoreText.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
     }
 
     void EndScreen() //Behövs inte tills vi har lagt till end scenes.
     {
-        SceneManager.LoadScene("MoneyEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+        SceneManager.LoadScene("MoneyEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn -Oliver och Axel
         Debug.Log("Money");
     }
     void EndScreen1() //Behövs inte tills vi har lagt till end scenes.
     {
-        SceneManager.LoadScene("ReputationEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+        SceneManager.LoadScene("ReputationEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn -Oliver och Axel
         Debug.Log("Rep");
     }
     void EndScreen2() //Behövs inte tills vi har lagt till end scenes.
     {
-        SceneManager.LoadScene("SustainEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen nam
+        SceneManager.LoadScene("SustainEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn -Oliver och Axel
         Debug.Log("Sus");
     }
 }

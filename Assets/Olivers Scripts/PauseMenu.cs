@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-//Allr i detta script utom mainCanvas delarna är gjorda av Oliver, main canvas delarn är av Elliot
+//Allt i detta script utom mainCanvas delarna är gjorda av Oliver, main canvas delarn är av Elliot
 
 public class PauseMenu : MonoBehaviour
 {
