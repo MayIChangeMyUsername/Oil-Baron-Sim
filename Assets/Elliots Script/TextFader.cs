@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using TMPro;
 using UnityEngine.SceneManagement;
-
+//det här skriptet fade-ar in texten i slutscenen och visar även vilken vecka man förlorade och vilket highscore man har - Elliot
 public class TextFader : MonoBehaviour
 {
 
@@ -23,7 +23,7 @@ public class TextFader : MonoBehaviour
         endText.color = new Color(0f, 0f, 0f, textAlpha);
 
 
-        if(SceneManager.GetActiveScene().name == "MoneyEnding") 
+        if(SceneManager.GetActiveScene().name == "MoneyEnding") //lägger till rätt text beroende på scen
         {
             endText.text = "WEEK: " + PlayerPrefs.GetInt("week").ToString() + "<br> HIGHSCORE: " + PlayerPrefs.GetInt("HighScore").ToString() + "<br>MONEY: 0<br>PRESS ESCAPE<br>TO CONTINUE";
         }
