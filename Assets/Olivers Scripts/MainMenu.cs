@@ -9,7 +9,7 @@ public class MainMenu : MonoBehaviour
     {
         SceneManager.LoadScene("Main Scen"); //laddar nästa scen när man klickar på en button med playgame (). -oliver //Jag ändrade från "buildIndex + 1" till "Main Scen" så att skriptet inte slutar fungera om man råkar ändra build ordning - Elliot
     }
-    public void QuitGame() //Lämnar spelet. 
+    public void QuitGame() //Lämnar spelet. -Oliver
     {
         Debug.Log("QUIT!");
         Application.Quit();

@@ -374,21 +374,20 @@ public class GameManager : MonoBehaviour
         if (money == 0)
         {
             ResetSave();
-            Invoke("EndScreen", endScreenDelay);
-
+            Invoke("EndScreen", endScreenDelay); //startar endscreen efter endscreendelay -Oliver
 
         }
         if (reputation == 0)
         {
             ResetSave();
-            Invoke("EndScreen1", endScreenDelay);
-           
+            Invoke("EndScreen1", endScreenDelay); //startar endscreen efter endscreendelay -Oliver
+
         }
         if (sustain == 0)
         {
             ResetSave();
-            Invoke("EndScreen2", endScreenDelay);
-            
+            Invoke("EndScreen2", endScreenDelay); //startar endscreen efter endscreendelay -Oliver
+
         }
 
 
@@ -428,17 +427,17 @@ public class GameManager : MonoBehaviour
 
     void EndScreen() //Behövs inte tills vi har lagt till end scenes.
     {
-        SceneManager.LoadScene("MoneyEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+        SceneManager.LoadScene("MoneyEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn -Oliver och Axel
         Debug.Log("Money");
     }
     void EndScreen1() //Behövs inte tills vi har lagt till end scenes.
     {
-        SceneManager.LoadScene("ReputationEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn
+        SceneManager.LoadScene("ReputationEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn -Oliver och Axel
         Debug.Log("Rep");
     }
     void EndScreen2() //Behövs inte tills vi har lagt till end scenes.
     {
-        SceneManager.LoadScene("SustainEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen nam
+        SceneManager.LoadScene("SustainEnding"); //byter till end scenen efter vi har lagt till ett namn till den scenen. Name = Scen namn -Oliver och Axel
         Debug.Log("Sus");
     }
 }
