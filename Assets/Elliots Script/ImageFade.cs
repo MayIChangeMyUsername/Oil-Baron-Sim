@@ -2,11 +2,11 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+//fader till knapparna så att de lyser när man har tryckt på de - Elliot
 public class ImageFade : MonoBehaviour
 {
 
-    bool IsActive = false;
+    bool IsActive = false; //är en fade in aktiv
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +35,7 @@ public class ImageFade : MonoBehaviour
     }
 
 
-    IEnumerator RunFadeIn()
+    IEnumerator RunFadeIn() //den här delen fade-ar in en ny, ljusare, knapp-bild över gamla knapp-bilden
     {
         //Debug.Log("In");
 
@@ -67,7 +67,7 @@ public class ImageFade : MonoBehaviour
         float elapsedTime = 0;
 
 
-        while (elapsedTime < fadeTime)
+        while (elapsedTime < fadeTime) //under tiden som knappen ska bli ljusare läggs opacitet till
         {
           
 
@@ -85,7 +85,7 @@ public class ImageFade : MonoBehaviour
     }
 
    
-    IEnumerator RunFadeOut()
+    IEnumerator RunFadeOut() //tar långsamt bort nya bilden. Denna effekt används när man klickar på next week knappen
     {
         //Debug.Log("Out");
 
@@ -95,9 +95,9 @@ public class ImageFade : MonoBehaviour
 
         Image img;
 
-        Color offColor;
+        Color offColor; //färg när knappen är avstängd
 
-        Color onColor;
+        Color onColor; //färg när knappen är på
 
         img = this.GetComponent<Image>();
 
@@ -115,7 +115,7 @@ public class ImageFade : MonoBehaviour
 
         float elapsedTime = 0f;
 
-        while (elapsedTime < fadeTime)
+        while (elapsedTime < fadeTime) //under tiden som knappen ska bli ljusare tas opacitet bort
         {
             
 
