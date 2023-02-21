@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 [System.Serializable]
 public class SaveData //Gjort av Axel förutom där det står Elliot
+    //sparar variabler från GameManager för att sedan låta dem användas i SaveSystem scriptet
 {
     public int Money;
     public int reputation;

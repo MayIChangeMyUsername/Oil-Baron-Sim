@@ -4,7 +4,9 @@ using System.IO;
 using System.Runtime.Serialization.Formatters.Binary;
 using System;
 
-public static class SaveSystem
+public static class SaveSystem //Axel
+    //Jag är lite osäker på vad allt det här gör men jag tror den konverterar värden på alla variabler i SaveData scriptet till binary
+    //vid SavePlayer() och konverterar från binary vid LoadPlayer()
 {
     public static void SavePlayer (GameManager player ) 
     {

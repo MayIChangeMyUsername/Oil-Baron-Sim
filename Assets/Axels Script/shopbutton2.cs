@@ -4,9 +4,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class shopbutton2 : MonoBehaviour
+public class shopbutton2 : MonoBehaviour //Axel
 {
-
+    //Scriptet bestämmer vad knapparna i shopen (telefonen) gör 
 
     public Button button;
 

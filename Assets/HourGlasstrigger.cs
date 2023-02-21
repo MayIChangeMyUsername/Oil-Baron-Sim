@@ -4,10 +4,10 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class HourGlasstrigger : MonoBehaviour
+public class HourGlasstrigger : MonoBehaviour //Skriven av Axel förutom där det står Elliot
 {
-
-    Animator myanimator;
+    //Scriptet aktiverar animatorn när man skippar till nästa vecka (Antingen via skip knappen eller via keybind) 
+    Animator myanimator; 
     public Button button;
 
 
@@ -27,18 +27,21 @@ public class HourGlasstrigger : MonoBehaviour
 
     private void Update()
     {
-        /*if (Input.GetKeyDown(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.H))
         {
-            myanimator.SetTrigger(Trigger_ANIM);
-        }*/
+            if (FindObjectOfType<GameManager>().eventActive == false) //Elliot
+            {
+                myanimator.SetTrigger(Trigger_ANIM); //Elliot
+            }
+        }
 
 
     }
-    void TaskOnClick()
+    void TaskOnClick() //Elliot
     {
-        if(FindObjectOfType<GameManager>().eventActive == false) 
+        if(FindObjectOfType<GameManager>().eventActive == false) //Elliot
         {
-            myanimator.SetTrigger(Trigger_ANIM);
+            myanimator.SetTrigger(Trigger_ANIM); //Elliot
         }
         
     }

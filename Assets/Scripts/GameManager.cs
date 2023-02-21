@@ -404,12 +404,13 @@ public class GameManager : MonoBehaviour
         week = 1;
         FindObjectOfType<SkipdayLockTest>().RollEventDice();
         SavePlayer();
-
+        //Sätter alla v?rden till sina start v?rden och
+        //sedan sparar s? att man inte har kvar en save fr?n innan man f?rlorade -Axel
     }
 
-   
 
-    
+
+
 
 
     void CheckHighScore() // Skapar en fil inom din dator som sparar ditt higscore du fått egenom din senaste playthrough (Anton)
