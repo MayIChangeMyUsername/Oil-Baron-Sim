@@ -4,6 +4,13 @@ using System.Collections.Generic;
 using UnityEngine.UI;
 using TMPro;
 
+
+
+//Icke fungerande script så komenterade inte detta!!! (Anton)
+
+
+
+
 public class ActualTextTyper : MonoBehaviour
 {
     [SerializeField]

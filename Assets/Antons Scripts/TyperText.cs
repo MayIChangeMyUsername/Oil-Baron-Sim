@@ -5,6 +5,12 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
 
+
+
+//Icke fungerande script så komenterade inte detta!!! (Anton)
+
+
+
 [RequireComponent(typeof(TextMeshProUGUI))]
 public sealed class TyperText : MonoBehaviour
 {
