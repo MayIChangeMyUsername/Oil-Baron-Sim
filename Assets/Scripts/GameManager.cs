@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     public int week = 0;
     public static int click = 1;
 
-    public static bool clicki = true; // gammal test variabel
+    public static bool clicki = true; // gammal test variabel (Anton)
 
     public Text weekText;
     //public Text clickText;
@@ -413,7 +413,7 @@ public class GameManager : MonoBehaviour
     
 
 
-    void CheckHighScore()
+    void CheckHighScore() // Skapar en fil inom din dator som sparar ditt higscore du fått egenom din senaste playthrough (Anton)
     {
         if(week > PlayerPrefs.GetInt("HighScore", 0))
         {
@@ -421,7 +421,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    void UpdateHighScore()
+    void UpdateHighScore() // Updaterar det highscoret du fått genom din senaste playthrough (Anton)
     {
         highScoreText.text = $"HighScore: {PlayerPrefs.GetInt("HighScore", 0)}";
     }
